@@ -26,12 +26,7 @@ useradd consul --create-home -G docker -s /bin/bash
 cp /root/dc1-values.yml /home/consul
 cp /root/dc2-values.yml /home/consul
 
-log "Starting first Kubernetes cluster...this might take up to 5 minutes."
-
-
-runuser -l consul -c "minikube start --vm-driver=docker -p dc1 -v 8 --memory 1024"
-
-runuser -l consul -c "minikube start --vm-driver=docker -p dc2 -v 8 --memory 1024"
+log "Starting first Kubernetes cluster..."
 
 
 # minikube start --wait=true
