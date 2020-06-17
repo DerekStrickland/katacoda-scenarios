@@ -23,7 +23,7 @@ server:
       maxUnavailable: 0
 connectInject:
   enabled: true
-  imageEnvoy: envoyproxy/envoy-alpine:v1.13.0
+  imageEnvoy: envoyproxy/envoy-alpine:v1.13.1
 meshGateway:
   enabled: true
   enableHealthChecks: false
@@ -37,4 +37,7 @@ meshGateway:
     nodePort: 30001
     #annotations: |
       #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    imageEnvoy: envoyproxy/envoy-alpine:v1.13.0
+    imageEnvoy: envoyproxy/envoy-alpine:v1.13.1
+client:
+  enabled: true
+  grpc: true

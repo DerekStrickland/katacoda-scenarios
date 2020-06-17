@@ -33,13 +33,13 @@ connectInject:
 meshGateway:
   enabled: true
   replicas: 1
-  service:
-    enabled: true
-    type: 'NodePort'
-    nodePort: 30002
-    #annotations: |
-    #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    imageEnvoy: envoyproxy/envoy-alpine:v1.13.0
+  # service:
+  #   enabled: true
+  #   type: 'NodePort'
+  #   nodePort: 30002
+  #   #annotations: |
+  #   #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  #   imageEnvoy: envoyproxy/envoy-alpine:v1.13.1
 server:
   replicas: 1
   bootstrapExpect: 1
@@ -53,7 +53,9 @@ server:
         - key: serverConfigJSON
           path: consul-federation-secret.yaml
       load: true
-
+client:
+  enabled: true
+  grpc: true
 
 
 
