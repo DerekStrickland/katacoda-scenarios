@@ -29,11 +29,13 @@ Now you should see a new error
 Error retrieving members: Get "https://127.0.0.1:8500/v1/agent/members?segment=_all": x509: certificate signed by unknown authority
 ```
 
-To skip verifying the certificate set the CONSUL_HTTP_SSL_VERIFY environment variable to false.
+{{execute T1}}
 
-TODO:  What if I needed to verify?
+`export CONSUL_CA_FILE=consul-agent-ca.pem`{{execute T1}}
 
-`export CONSUL_HTTP_SSL_VERIFY=false`{{execute T1}}
+<!-- TODO:  What if I needed to verify?
+
+`export CONSUL_HTTP_SSL_VERIFY=false`{{execute T1}} -->
 
 # Try to view consul members
 

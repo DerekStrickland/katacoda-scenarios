@@ -6,6 +6,13 @@
   "details": {
     "steps": [
       {
+        "title": "Provisioning Lab Infrastructure",
+        "text": "provision.md",
+        "courseData": "provision.courseData.sh",
+        "code": "provision.code.sh",
+        "verify": "provision.verify.sh"
+      },
+      {
         "title": "Step 1",
         "text": "step1.md"
       },
@@ -35,7 +42,13 @@
     },
     "finish": {
       "text": "finish.md"
-    }
+    },
+    "assets": {
+			"client": [
+			  { "file": "dc1.yml", "target": "./" },
+			  { "file": "secure-dc1.yml", "target": "./" }
+			]
+		}
   },
   "environment": {
     "uilayout": "editor-terminal"
