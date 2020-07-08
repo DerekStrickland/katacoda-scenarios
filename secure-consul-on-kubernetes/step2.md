@@ -22,8 +22,6 @@
 
 Note the traffic is in clear text
 
-# prove that ACLs are not enforced
+# exit the running container
 
-`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8500`{{execute T3}}
-
-`consul members`{{execute T2}}
+`exit`{{execute T1}}

@@ -1,19 +1,18 @@
+# create gossip encryption key
+`kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)`{{execute T1}}
 
-# connect to server container
+# create root ca
+`consul tls ca create`{{execute T1}}
 
-`kubectl exec -it katacoda-consul-server-0 -- /bin/sh`{{execute T1}}
+# create cert secret
+`kubectl create secret generic consul-ca-cert --from-file='tls.crt=./consul-agent-ca.pem'`{{execute T1}}
 
-# add tcp dump
+# create private key secret
+`kubectl create secret generic consul-ca-key --from-file='tls.key=./consul-agent-ca-key.pem'`{{execute T1}}
 
-`apk update`{{execute T1}}
-`apk add tcpdump`{{execute T1}}
+# helm upgrade
+`helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 
-# start a capture on the server
+# Get pods
 
-`tcpdump -an portrange 8300-8700 -A`{{execute T1}}
-
-note the traffic is encrypted
-
-# exit the server container
-
-`exit`{{execute interrupt T1}}
+`kubectl get pods`{{execute T1}}

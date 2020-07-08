@@ -13,28 +13,32 @@
         "verify": "provision.verify.sh"
       },
       {
-        "title": "Installing Consul with Helm",
+        "title": "Create an insecure Consul service mesh running inside of a Kubernetes cluster",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Verify that network traffic occurs in clear text",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Verify that ACLs are not enforced",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Upgrade the Consul service mesh to enable gossip encryption, TLS, and ACLs",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Verify that ACL tokens are now required",
         "text": "step5.md"
       },
       {
-        "title": "Step 6",
+        "title": "Retrieve and set an ACL token",
         "text": "step6.md"
+      },
+      {
+        "title": "Verify that network traffic is now encrypted",
+        "text": "step7.md"
       }
     ],
     "intro": {
