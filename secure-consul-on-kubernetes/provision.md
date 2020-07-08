@@ -5,9 +5,10 @@ next step.
 **Example Output**
 
 ```screenshot
-- Installing Helm 3
 - Installing Consul
 - Installing KinD (Kubernetes in Docker)
+- Installing kubectl
+- Installing Helm 3
 ```
 
 and concluding with
