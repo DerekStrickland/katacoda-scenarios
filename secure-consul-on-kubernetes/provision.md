@@ -6,8 +6,8 @@ next step.
 
 ```screenshot
 - Installing Consul
-- Installing KinD (Kubernetes in Docker)
 - Installing kubectl
+- Installing KinD (Kubernetes in Docker)
 - Installing Helm 3
 ```
 

@@ -14,10 +14,12 @@ mkdir -p /tmp/provision
 
 cd /tmp/provision
 
+## ================================
 log "Install prerequisites"
 
 apt-get install -y unzip curl > /dev/null
 
+## ================================
 log "Installing Consul ${APP_VERSION}"
 
 # Retrieves lates version from checkpoint
@@ -31,20 +33,20 @@ mv consul /usr/local/bin/consul
 rm -rf consul_${APP_VERSION}_linux_amd64.zip > /dev/null
 
 ## ================================
-
-log "Installing KinD"
-
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
-chmod +x ./kind
-mv ./kind /usr/local/bin/kind
-
 log "Installing kubectl"
 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
+## ================================
+log "Installing KinD"
 
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
+chmod +x ./kind
+mv ./kind /usr/local/bin/kind
+
+## ================================
 log "Installing Helm ${HELM_VERSION}"
 
 export HELM_VERSION="3.2.1"
@@ -54,7 +56,6 @@ tar xzf helm-v${HELM_VERSION}-linux-amd64.tar.gz
 sudo cp linux-amd64/helm /usr/local/bin/
 
 ## ================================
-
 log "Cleaning temporary files"
 
 rm -rf /tmp/provision
