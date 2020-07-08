@@ -18,12 +18,12 @@ log "Install prerequisites"
 
 apt-get install -y unzip curl > /dev/null
 
-log Install Consul locally
+log "Install Consul locally"
 
 # Retrieves lates version from checkpoint
 # Substitute this with APP_VERSION=x.y.z to configure a specific version.
 APP_VERSION=1.8.0
-log Installing Consul ${APP_VERSION}
+log "Installing Consul ${APP_VERSION}"
 
 curl -s https://releases.hashicorp.com/consul/${APP_VERSION}/consul_${APP_VERSION}_linux_amd64.zip -o consul_${APP_VERSION}_linux_amd64.zip
 unzip consul_${APP_VERSION}_linux_amd64.zip > /dev/null
@@ -32,6 +32,8 @@ mv consul /usr/local/bin/consul
 rm -rf consul_${APP_VERSION}_linux_amd64.zip > /dev/null
 
 ## ================================
+
+log "Installing KinD"
 
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
 chmod +x ./kind
