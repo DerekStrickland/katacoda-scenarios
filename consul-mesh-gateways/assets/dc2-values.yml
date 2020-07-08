@@ -4,7 +4,6 @@ global:
   datacenter: dc2
   tls:
     enabled: true
-
     # Here we're using the shared certificate authority from the primary
     # datacenter that was exported via the federation secret.
     caCert:
@@ -13,7 +12,6 @@ global:
     caKey:
       secretName: consul-federation
       secretKey: caKey
-
   # acls:
   #   manageSystemACLs: true
 
@@ -53,57 +51,6 @@ server:
         - key: serverConfigJSON
           path: consul-federation-secret.yaml
       load: true
-client:
-  enabled: true
-  grpc: true
-
-
-
-
-
-
-
-
-
-# global:
-#   datacenter: dc2
-#   image: consul:1.8.0-beta
-#   tls:
-#     enabled: true
-#     caCert:
-#       secretName: consul-ca-cert
-#       secretKey: tls.crt
-#     caKey:
-#       secretName: consul-ca-key
-#       secretKey: tls.key
-#   bootstrapACLs: false
-#   federation:
-#     enabled: true
-#   name: consul
-
-# server:
-#   replicas: 1
-#   bootstrapExpect: 1
-#   extraConfig: |
-#     {
-#       "primary_datacenter": "dc1",
-#       "primary_gateways": ["10.5.1.200:30001"]
-#     }
-# connectInject:
+# client:
 #   enabled: true
-#   imageEnvoy: envoyproxy/envoy-alpine:v1.13.0
-
-# meshGateway:
-#   enabled: true
-#   enableHealthChecks: false
-#   replicas: 1
-#   # wanAddress:
-#   #   useNodeIP: false
-#   #   host: "10.5.2.200"
-#   service:
-#     enabled: true
-#     type: 'NodePort'
-#     nodePort: 30002
-#     #annotations: |
-#     #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-#     imageEnvoy: envoyproxy/envoy-alpine:v1.13.0
+#   grpc: true
