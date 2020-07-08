@@ -4,7 +4,7 @@
 
 # Set CONSUL_HTTP_TOKEN
 
-`export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -D)`{{execute T1}}
+`export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute T1}}
 
 # Try to view consul members
 

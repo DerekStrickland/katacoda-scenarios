@@ -13,7 +13,7 @@
         "verify": "provision.verify.sh"
       },
       {
-        "title": "Step 1",
+        "title": "Installing Consul with Helm",
         "text": "step1.md"
       },
       {
