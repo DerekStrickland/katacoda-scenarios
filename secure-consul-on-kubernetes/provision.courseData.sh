@@ -33,6 +33,10 @@ rm -rf consul_${APP_VERSION}_linux_amd64.zip > /dev/null
 
 ## ================================
 
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
+chmod +x ./kind
+mv ./kind /usr/local/bin/kind
+
 export HELM_VERSION="3.2.1"
 
 log "Installing Helm ${HELM_VERSION}"

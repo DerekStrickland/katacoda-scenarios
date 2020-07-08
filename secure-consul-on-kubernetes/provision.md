@@ -6,8 +6,8 @@ next step.
 
 ```screenshot
 - Installing Helm 3
-- Starting Kubernetes...this might take up to 5 minutes.
-- Adding port forward for Consul UI
+- Installing Consul
+- Installing KinD (Kubernetes in Docker)
 ```
 
 and concluding with

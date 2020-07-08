@@ -1,6 +1,6 @@
 # Port forward from 8501 in cluster to 8500 on host
 
-`kubectl port-forward katacoda-consul-server-0 8500:8501`{{execute interrupt T3}}
+`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8501`{{execute interrupt T3}}
 
 Note that we are using port 8501 on the container. Once TLS is enabled, Consul uses port 8501 for communications.
 
