@@ -15,7 +15,7 @@
 `kubectl create secret generic consul-ca-key --from-file='tls.key=./consul-agent-ca-key.pem'`{{execute T1}}
 
 # helm upgrade
-`helm upgrade -f ./assets/secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
+`helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 
 # Get pods
 
