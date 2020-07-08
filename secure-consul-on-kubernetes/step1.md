@@ -20,7 +20,7 @@ reference of all possible configuration options, please review the official [doc
 
 ## Apply the chart
 
-Finally, apply the chart using the following command. Note that 'katacoda' has been passed as an argument.
+Finally, apply the chart using the following command. Note that `katacoda` has been passed as an argument.
 Helm requires a name be applied to each install. You may name your installation anything you like, but
 in this tutorial 'katacoda' is used. When working locally, make sure to make note of the name of your installation,
 as it will be required to apply future upgrades. The install may take a minute or two to complete.
@@ -29,7 +29,7 @@ as it will be required to apply future upgrades. The install may take a minute o
 
 When the installation is complete, you should receive output similar to the following:
 
-```plaintext
+`
 NAME: katacoda
 LAST DEPLOYED: Wed Jul  8 15:56:47 2020
 NAMESPACE: default
@@ -43,7 +43,6 @@ Consul with Kubernetes available here:
 
 https://www.consul.io/docs/platform/k8s/index.html
 
-
 Your release is named katacoda.
 
 To learn more about the release if you are using Helm 2, run:
@@ -55,7 +54,7 @@ To learn more about the release if you are using Helm 3, run:
 
   $ helm status katacoda
   $ helm get all katacoda
-```
+`
 
 ## Verify installation
 
@@ -67,9 +66,9 @@ of running pods using the following command:
 Once all pods are in a ready status, as illustrated in the following output, you can
 proceed to the next step.
 
-```plaintext
+`
 NAME                                                              READY   STATUS    RESTARTS   AGE
 katacoda-consul-7d4h2                                             1/1     Running   0          82s
 katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Running   0          94s
 katacoda-consul-server-0                                          1/1     Running   0          93s
-```
+`
