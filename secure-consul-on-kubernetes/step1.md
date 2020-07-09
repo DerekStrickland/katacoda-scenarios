@@ -14,9 +14,10 @@ First, download the Helm repo run the following command:
 
 ### Review a basic config file
 
-Next, you would define a custom configuration file, but for this sake of this hands on lab,
+Next, you would define a custom configuration file, but for this hands on lab,
 the `dc1.yaml`{{open}} file has been provided. Feel free to review it now. For a complete
-reference of all possible configuration options, please review the official [documentation](https://www.consul.io/docs/k8s/helm)
+reference of all possible configuration options, review the official
+[documentation](https://www.consul.io/docs/k8s/helm).
 
 ### Apply the chart
 

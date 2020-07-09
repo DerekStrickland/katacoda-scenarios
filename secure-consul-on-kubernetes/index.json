@@ -17,11 +17,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Verify that network traffic occurs in clear text",
+        "title": "Verify that gossip traffic occurs in clear text",
         "text": "step2.md"
       },
       {
-        "title": "Verify that ACLs are not enforced",
+        "title": "Verify that RPC traffic occurs in clear text and ACLs are not enforced",
         "text": "step3.md"
       },
       {

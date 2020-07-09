@@ -22,33 +22,5 @@ occurs quickly and frequently.
 `tcpdump -an portrange 8300-8700 -A`{{execute T1}}
 
 Inspect the output, and you will notice that the traffic is in cleartext.
-The majority of the traffic you are obvserving at this point is gossip traffic, specifically
-the entries tagged as UDP traffic. This proves that gossip encryption is not enabled.
-
-### Log server traffic
-
-This slightly modified version of the tcpdump command writes results to a log file.
-Run it now so that you can grep for specific, interesting log entries.
-
-`tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T1}}
-
-Now, let's generate some HTTP API traffic in a different terminal. This traffic will come
-orginate from a client machine to the server and will prove that RPC traffic is also in cleartext.
-In this situation, the script sets a Key-Value store entry which, in a production scenario, may
-very well contain sensitive or secret information.
-
-`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put foo=bar`{{execute T2}}
-
-### View the log file
-
-Now, from the original terminal which is currently attached to the server container shell, you can
-search the log file with the following command:
-
-`grep 'foo' /tmp/tcpdump.log`{{execute interrupt T1}}
-
-Note that you are able to see the Key-Value store entry in cleartext. This proves that RPC traffic
-is not encrypted.
-
-Exit the server container.
-
-`exit`{{execute T1}}
+The note the UDP operations. These entries are the gossip protocol at work.
+This proves that gossip encryption is not enabled.
