@@ -6,19 +6,19 @@ Installing Consul in Kubernetes consists of three steps:
 - Defining your desired configuration in a yaml file
 - Apply the chart to your cluster using the helm cli
 
-## Download Helm repo
+### Download Helm repo
 
 First, download the Helm repo run the following command:
 
 `helm repo add hashicorp https://helm.releases.hashicorp.com`{{execute T1}}
 
-## Review a basic config file
+### Review a basic config file
 
 Next, you would define a custom configuration file, but for this sake of this hands on lab,
 the `dc1.yaml`{{open}} file has been provided. Feel free to review it now. For a complete
 reference of all possible configuration options, please review the official [documentation](https://www.consul.io/docs/k8s/helm)
 
-## Apply the chart
+### Apply the chart
 
 Finally, apply the chart using the following command. Note that `katacoda` has been passed as an argument.
 Helm requires a name be applied to each install. You may name your installation anything you like, but
@@ -29,7 +29,7 @@ as it will be required to apply future upgrades. The install may take a minute o
 
 When the installation is complete, you should receive output similar to the following:
 
-`
+```plaintext
 NAME: katacoda
 LAST DEPLOYED: Wed Jul  8 15:56:47 2020
 NAMESPACE: default
@@ -54,9 +54,9 @@ To learn more about the release if you are using Helm 3, run:
 
   $ helm status katacoda
   $ helm get all katacoda
-`
+```
 
-## Verify installation
+### Verify installation
 
 Once the installation is complete, you can verify everything was successful by reviewing the status
 of running pods using the following command:
@@ -66,9 +66,16 @@ of running pods using the following command:
 Once all pods are in a ready status, as illustrated in the following output, you can
 proceed to the next step.
 
-`
+```shell
 NAME                                                              READY   STATUS    RESTARTS   AGE
 katacoda-consul-7d4h2                                             1/1     Running   0          82s
 katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Running   0          94s
 katacoda-consul-server-0                                          1/1     Running   0          93s
-`
+```
+
+At this point the Consul service mesh has been installed in the cluster, but no security
+features have been enabled. This means that:
+
+- All gossip traffic between agents is in clear text
+- All RPC communications between agents is in clear text
+- There are no Access Controls in place

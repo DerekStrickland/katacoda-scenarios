@@ -7,7 +7,7 @@ The three core components of Consul service mesh security are [Gossip Encryption
 
 Specifically, you will:
 
-- Create an insecure Consul service mesh running inside of a Kubernetes cluster
+- Install Consul service mesh in a Kubernetes cluster
 - Verify that network traffic occurs in clear text
 - Verify that ACLs are not enforced
 - Upgrade the Consul service mesh to enable gossip encryption, TLS, and ACLs

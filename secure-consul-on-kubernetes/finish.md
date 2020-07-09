@@ -2,7 +2,7 @@ In this hands-on lab you learned how to secure a Consul service mesh running in 
 
 Specifically you used the Consul Helm chart to:
 
-- Created an insecure Consul service mesh running inside of a Kubernetes cluster
+- Installed Consul service mesh in a Kubernetes cluster
 - Verified that gossip traffic was clear text
 - Verified that API traffic was clear text
 - Verified that ACLs were not enforced

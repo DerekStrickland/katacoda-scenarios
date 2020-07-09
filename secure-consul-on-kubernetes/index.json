@@ -13,7 +13,7 @@
         "verify": "provision.verify.sh"
       },
       {
-        "title": "Create an insecure Consul service mesh running inside of a Kubernetes cluster",
+        "title": "Install Consul service mesh in a Kubernetes cluster",
         "text": "step1.md"
       },
       {
@@ -25,7 +25,7 @@
         "text": "step3.md"
       },
       {
-        "title": "Upgrade the Consul service mesh to enable gossip encryption, TLS, and ACLs",
+        "title": "Enable gossip encryption, TLS, and ACLs",
         "text": "step4.md"
       },
       {
