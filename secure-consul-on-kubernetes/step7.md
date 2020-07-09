@@ -4,11 +4,12 @@
 
 # add tcp dump
 
-`apk update`{{execute T1}}
-`apk add tcpdump`{{execute T1}}
+`apk update`{{execute T2}}
+
+`apk add tcpdump`{{execute T2}}
+
 
 ## IS THIS STILL REQUIRED
-`rm -rf /tmp/tcpdump.log`{{execute T2}}
 
 `tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute T2}}
 
@@ -16,6 +17,11 @@
 
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put foo=bar`{{execute T1}}
 
+FAILS CAUSE NO TOKEN
+
+`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put -token $(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d) foo=bar`{{execute T1}}
+
+Works cause we passed the secret
 
 # Switch back to server, stop tcpdump and grep log for entry
 
@@ -24,7 +30,7 @@
 
 # start a capture on the server
 
-`tcpdump -an portrange 8300-8700 -A`{{execute T1}}
+`tcpdump -an portrange 8300-8700 -A`{{execute T2}}
 
 note the traffic is encrypted
 

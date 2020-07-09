@@ -29,8 +29,6 @@ Now you should see a new error
 Error retrieving members: Get "https://127.0.0.1:8500/v1/agent/members?segment=_all": x509: certificate signed by unknown authority
 ```
 
-{{execute T1}}
-
 `export CONSUL_CA_FILE=consul-agent-ca.pem`{{execute T1}}
 
 <!-- TODO:  What if I needed to verify?
@@ -41,4 +39,6 @@ Error retrieving members: Get "https://127.0.0.1:8500/v1/agent/members?segment=_
 
 `consul members`{{execute T1}}
 
+
+--WARNING --- IT DOESN"T FAIL N
 It fails with a 403 -- GOOD!!  You didn't supply a token
