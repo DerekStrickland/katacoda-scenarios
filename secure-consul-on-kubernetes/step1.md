@@ -10,7 +10,7 @@ Installing Consul in Kubernetes consists of three steps:
 
 First, download the Helm repo run the following command:
 
-`helm repo add hashicorp https://helm.releases.hashicorp.com"`{{execute T1}}
+`helm repo add hashicorp https://helm.releases.hashicorp.com`{{execute T1}}
 
 ### Review a basic config file
 
