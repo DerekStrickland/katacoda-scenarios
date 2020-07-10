@@ -2,12 +2,14 @@ There are a few components that need to be added to the environment; we are
 adding them now. Wait for the complete message and then move to the
 next step.
 
+This may take a few minutes.
+
 **Example Output**
 
 ```screenshot
 - Installing Consul
 - Installing kubectl
-- Installing KinD (Kubernetes in Docker)
+- Installing kind (Kubernetes in Docker)
 - Installing Helm 3
 ```
 

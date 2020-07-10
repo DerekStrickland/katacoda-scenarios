@@ -40,7 +40,7 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
 ## ================================
-log "Installing KinD"
+log "Installing kind"
 
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
 chmod +x ./kind

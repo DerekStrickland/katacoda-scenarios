@@ -2,7 +2,7 @@ To verify that network traffic is in cleartext you should inspect it.
 
 ### View server traffic
 
-To view network traffic, you can Connect to the consul server container, and observe
+To view network traffic, you can connect to the consul server container, and observe
 its traffic using the `tcpdump` program. You should now have a container running named
 `katacoda-consul-server-0`. Connect to it with the following command:
 
@@ -22,5 +22,5 @@ occurs quickly and frequently.
 `tcpdump -an portrange 8300-8700 -A`{{execute T1}}
 
 Inspect the output, and you will notice that the traffic is in cleartext.
-The note the UDP operations. These entries are the gossip protocol at work.
+Note the UDP operations. These entries are the gossip protocol at work.
 This proves that gossip encryption is not enabled.
