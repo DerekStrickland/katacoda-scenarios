@@ -15,7 +15,7 @@
 
 # Switch to host and add a kv entry
 
-`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put foo=bar`{{execute T1}}
+`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put apple=banana`{{execute T1}}
 
 FAILS CAUSE NO TOKEN
 
