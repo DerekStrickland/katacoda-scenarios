@@ -1,39 +1,48 @@
-# Switch back to server shell session and start tcpdump again
+Now that you have proven that ACLs are enabled, and that TLS verification is being enforced,
+you will prove that all gossip and RPC traffic are encrypted
+
+
+### Capture server traffic
+
+First, start a server shell session.
 
 `kubectl exec -it katacoda-consul-server-0 -- /bin/sh`{{execute T2}}
 
-# add tcp dump
+Next, since the containers were recycled during the helm upgrade, you will
+have to add tcp dump again.
 
 `apk update`{{execute T2}}
 
 `apk add tcpdump`{{execute T2}}
 
+First, start `tcpdump` and observe the gossip traffic.
 
-## IS THIS STILL REQUIRED
+`tcpdump -an portrange 8300-8700 -A`{{execute T2}}
 
-`tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute T2}}
+Notice that none of the traffic is human readable, as it was before. This
+proves that gossip traffic is now encrypted.
 
-# Switch to host and add a kv entry
+Now, restart `tcpdump` and pipe the results to a log file so that
+you can test for cleartext RPC traffic.
 
+`tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T2}}
+
+Now, from a client agent, try to set a Key-Value store entry with the consul cli.
+
+-------------------------------------
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put apple=banana`{{execute T1}}
 
 FAILS CAUSE NO TOKEN
 
-`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put -token $(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d) foo=bar`{{execute T1}}
+`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put -token $(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d) apple=banana`{{execute T1}}
 
 Works cause we passed the secret
+-------------------------------------
 
-# Switch back to server, stop tcpdump and grep log for entry
+Now, switch back to server, stop tcpdump and grep log for entry
 
-`grep 'foo' /tmp/tcpdump.log`{{execute interrupt T2}}
+`grep 'apple' /tmp/tcpdump.log`{{execute interrupt T2}}
 
+Notice, that no rows were found this time. This proves that RCP traffic is now encrypted.
 
-# start a capture on the server
-
-`tcpdump -an portrange 8300-8700 -A`{{execute T2}}
-
-note the traffic is encrypted
-
-# exit the server container
-
-`exit`{{execute interrupt T1}}
+`exit`{{execute interrupt T2}}
