@@ -5,7 +5,7 @@ First, configure Kubernetes to forward the HTTP port (8500) to your development 
 
 `kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8500`{{execute T3}}
 
-Now run consul members to retrieve a list of service mesh members.
+Now, run consul members to retrieve a list of service mesh members.
 
 `consul members`{{execute T1}}
 
@@ -25,7 +25,8 @@ Now, try to list consul members again.
 
 `consul members`{{execute T1}}
 
-You should receive an error in output as follows:
+You should receive an error indicating that you are trying to send HTTP traffic to
+an HTTPS server.
 
 ```shell
 Unexpected response code: 400 (Client sent an HTTP request to an HTTPS server.)`
@@ -49,12 +50,12 @@ Error retrieving members: Get "https://127.0.0.1:8500/v1/agent/members?segment=_
 
 This error message indicates that connectivity is now being established, but
 communication is being rejected because the TLS handshake can't be negotiated.
-In order to convince the server that the client communication is authorized,
-the client needs to supply a ca-file cli option. Run the following command,
-and supply the consul-agent-ca.pem file you created earlier in the lab.
+In order to authenticate with the sever, the client needs to supply a ca-file
+cli option. Run the following command, and supply the consul-agent-ca.pem file
+you created earlier in the lab.
 
 `consul members -ca-file consul-agent-ca.pem`{{execute T1}}
 
-You should now receive a list of all members of the service mesh. The
-actions you performed in this section of the lab proved that TLS is now
-being enforced on a connectivity level.
+You now observe a list of all members of the service mesh. The
+actions you performed in this section of the lab proved that TLS is
+being enforced.

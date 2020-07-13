@@ -1,16 +1,18 @@
-Next, you will upgrade your Consul service mesh installation to enable the three
+Next, upgrade your Consul service mesh installation to enable the three
 core components of Consul security: gossip encryption, TLS, and ACLs.
 
 ### Review a security enbabled config file
 
-Next, you would typically modify your custom configuration file, but for this hands-on lab,
-the `secure-dc1.yaml`{{open}} file has been provided with all the necessary options.
-Feel free to review it now. We encourage you to compare it to the `dc1.yaml`{{open}} file you
-installed earlier. For a complete reference of all possible configuration options,
-review the official [documentation](https://www.consul.io/docs/k8s/helm).
+Upgrading the service mesh is accomplished by updating the custom configuration
+yaml file, and then running a `helm upgrade` command with the new configuration.
+For this hands-on lab, the `secure-dc1.yaml`{{open}} file has been provided with
+all the necessary options set. Feel free to review it now. We encourage you to
+compare it to the `dc1.yaml`{{open}} file you installed earlier. For a complete
+reference of all possible configuration options, review the official [documentation](https://www.consul.io/docs/k8s/helm).
 
-### Configure gossip encryption
+### Configure Gossip encryption
 
+If you haven't opened the `secure-dc1.yaml`{{open}} file, please do so now.
 Notice that the file now includes a `gossipEncryption` stanza.
 
 ```yaml
@@ -19,11 +21,9 @@ gossipEncryption:
     secretKey: "key"
 ```
 
-This entry tells the helm chart which Kubernetes secret to retrieve and use as
-the gossip encryption key. You must create a valid key and register it
+This entry provides the helm chart with the name of the Kubernetes secret to retrieve
+and use as the gossip encryption key at runtime. You must create a valid key and register it
 as a secret with Kubernetes.
-
-#### Create gossip encryption key
 
 The `secretName` and `secretKey` entries refer to a Kubernetes secret that can be
 retrieved at runtime. Use the following command to register a gossip encryption key
@@ -67,20 +67,20 @@ and TLS.
 
 ### Configure managed ACLs
 
-By setting manageSystemACLs to true, the ACL system will, by default, configure itself. You
-do not need to take any action beyond setting the value in the config file. We have done
-that for you in this hands-on lab. The entry looks like this.
+By setting manageSystemACLs to true, the ACL system will configure itself. You
+do not need to take any action beyond setting the value in the config file.
+The entry looks like this.
 
 ```yaml
 acls:
     manageSystemACLs: true
 ```
 
-### helm upgrade
+### Helm upgrade
 
 The config file for the chart has been properly configured, and all necessary secrets have
-been registered with Kubernetes.  Execute the following command to apply those changes to the
-cluster. The upgrade may take a minute or two to complete.
+been registered with Kubernetes. Execute the following command to upgrade the installation
+with these changes. The upgrade may take a minute or two to complete.
 
 `helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 

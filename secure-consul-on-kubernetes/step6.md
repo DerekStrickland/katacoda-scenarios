@@ -1,12 +1,12 @@
-In the previous section of the lab you updated the development host configuration with
+In the previous section of the lab, you updated the development host configuration with
 enough settings to allow you to list members of the Consul service mesh using the cli.
 
 ### ACL enforcement validation
-Now, try a more advanced operation, like inserting a value to the Key-Value store.
+Try inserting a value to the Key-Value store.
 
 `consul kv put -ca-file consul-agent-ca.pem apple=banana`{{execute T1}}
 
-This command failed with the following message:
+This command fails with the following message:
 
 `Error! Failed writing data: Unexpected response code: 403 (Permission denied)`
 
@@ -23,8 +23,8 @@ service_prefix "" {
 }
 ```
 
-This policy is needed for DNS, more specifically, so that the Kubernetes DNS server can
-make DNS queries against Consul. So queries like `consul members` end up working
+This policy is necessary for DNS, more specifically, so that the Kubernetes DNS server can
+make DNS queries against Consul, so that queries like `consul members` end up working
 without a client specifically providing a token. If you don't want to use Consul DNS,
 you could disable it in the chart by setting `dns.enabled` to false. This will tell
 the ACL bootstrapping job not to create a policy for the anonymous token. However, if
@@ -59,7 +59,7 @@ kind: Secret
 metadata:
 ```
 
-The value of interest is the string in the data stanza's token entry. That value is a base64
+The value of interest is the string in the data stanza's token field. That value is a base64
 encoded string that contains the bootstrap token generated during the consul-helm ACL init
 process.
 
@@ -68,7 +68,7 @@ environment variable by running the following command.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute T1}}
 
-Now, try to set a Key-Value store value again, with an ACL token defined.
+Now, try to set a Key-Value store value again, with an ACL token set.
 
 `consul kv put -ca-file consul-agent-ca.pem apple=banana`{{execute T1}}
 

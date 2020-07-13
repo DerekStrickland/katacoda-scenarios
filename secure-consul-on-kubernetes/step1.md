@@ -8,22 +8,22 @@ Installing Consul in Kubernetes consists of three steps:
 
 ### Download Helm repo
 
-First, download the Helm repo run the following command:
+First, download the Helm repo and run the following command:
 
 `helm repo add hashicorp https://helm.releases.hashicorp.com`{{execute T1}}
 
 ### Review a basic config file
 
-Next, you would define a custom configuration file, but for this hands on lab,
-the `dc1.yaml`{{open}} file has been provided. Feel free to review it now. For a complete
-reference of all possible configuration options, review the official
-[documentation](https://www.consul.io/docs/k8s/helm).
+Next, in your own environment, you would define a custom configuration file,
+but for this hands on lab, the `dc1.yaml`{{open}} file has been provided.
+Feel free to review it now. For a complete reference of all possible configuration
+options, review the official [documentation](https://www.consul.io/docs/k8s/helm).
 
 ### Apply the chart
 
 Finally, apply the chart using the following command. Note that `katacoda` has been passed as an argument.
-Helm requires a name be applied to each install. You may name your installation anything you like, but
-in this tutorial 'katacoda' is used. When working locally, make sure to make note of the name of your installation,
+Helm requires a name be provided for each installation. You may name your installation anything you like, but
+in this tutorial 'katacoda' is used. When working locally, make note of the name of your installation,
 as it will be required to apply future upgrades. The install may take a minute or two to complete.
 
 `helm install -f ./dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
@@ -59,13 +59,12 @@ To learn more about the release if you are using Helm 3, run:
 
 ### Verify installation
 
-Once the installation is complete, you can verify everything was successful by reviewing the status
+You can verify everything was successful by reviewing the status
 of running pods using the following command:
 
 `kubectl get pods`{{execute T1}}
 
-Once all pods are in a ready status, as illustrated in the following output, you can
-proceed to the next step.
+Check that all pods ready/running, as illustrated in the following output.
 
 ```shell
 NAME                                                              READY   STATUS    RESTARTS   AGE
@@ -74,7 +73,7 @@ katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Runnin
 katacoda-consul-server-0                                          1/1     Running   0          93s
 ```
 
-At this point the Consul service mesh has been installed in the cluster, but no security
+At this point, the Consul service mesh has been installed in the cluster, but no security
 features have been enabled. This means that:
 
 - All gossip traffic between agents is in clear text
