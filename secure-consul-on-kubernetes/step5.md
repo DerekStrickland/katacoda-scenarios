@@ -1,8 +1,7 @@
 Now, you will verify that gossip encrytion and TLS are enabled, and that
 ACLs are being enforced.
 
-Because, the changes to the cluster configuration resulted in new containers being
-published, you will need to run the port forward command again.
+First, configure Kubernetes to forward the HTTP port (8500) to your development host.
 
 `kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8500`{{execute T3}}
 
@@ -32,9 +31,9 @@ You should receive an error in output as follows:
 Unexpected response code: 400 (Client sent an HTTP request to an HTTPS server.)`
 ```
 
-This is another indicator that TLS is being enforced. Now that TLS is being enforced,
-you must set the CONSUL_HTTP_SSL environment variable to true on any host attempting
-to execute Consul cli commands. Do that now.
+This is another indicator that TLS is being enforced. You must set the CONSUL_HTTP_SSL
+environment variable to true on any host attempting to execute Consul cli commands.
+Do that now.
 
 `export CONSUL_HTTP_SSL=true`{{execute T1}}
 
@@ -50,8 +49,8 @@ Error retrieving members: Get "https://127.0.0.1:8500/v1/agent/members?segment=_
 
 This error message indicates that connectivity is now being established, but
 communication is being rejected because the TLS handshake can't be negotiated.
-In order, to convince the server that the client communication is authorized,
-the client needs to supply a ca-file cli option. Runt the following command,
+In order to convince the server that the client communication is authorized,
+the client needs to supply a ca-file cli option. Run the following command,
 and supply the consul-agent-ca.pem file you created earlier in the lab.
 
 `consul members -ca-file consul-agent-ca.pem`{{execute T1}}

@@ -29,7 +29,7 @@
         "text": "step4.md"
       },
       {
-        "title": "Verify that ACL tokens are now required",
+        "title": "Verify that ACL tokens are required",
         "text": "step5.md"
       },
       {
@@ -37,7 +37,7 @@
         "text": "step6.md"
       },
       {
-        "title": "Verify that network traffic is now encrypted",
+        "title": "Verify that network traffic is encrypted",
         "text": "step7.md"
       }
     ],

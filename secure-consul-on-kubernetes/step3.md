@@ -16,7 +16,7 @@ orginate from the client machine to the server, and will prove that RPC traffic 
 For this experiment, the script sets a Key-Value store entry. This simulates a user setting a value that
 may contain sensitive or secret information.
 
-`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put foo=bar`{{execute T2}}
+`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put apple=banana`{{execute T2}}
 
 The command succeeds, but notice that you did not pass a `-token` option nor did you set the
 `CONSUL_HTTP_TOKEN` environment variable. One or the other is required when ACLs are enabled.
@@ -26,7 +26,7 @@ This command succeeding proves that ACLs are not enabled.
 
 Now, from the original terminal you can search the log file for the cli operation with the following command:
 
-`grep 'foo' /tmp/tcpdump.log`{{execute interrupt T1}}
+`grep 'apple' /tmp/tcpdump.log`{{execute interrupt T1}}
 
 Note that you are able to see the Key-Value store entry in cleartext. This proves that RPC traffic
 is not encrypted.

@@ -8,7 +8,7 @@ Now, try a more advanced operation, like inserting a value to the Key-Value stor
 
 This command failed with the following message:
 
-`403 (Permission denied)`
+`Error! Failed writing data: Unexpected response code: 403 (Permission denied)`
 
 The 403 response is a sign that ACLs are being enforced. You have not yet supplied
 an ACL token, and so the command fails. The `consul members` command worked because
@@ -61,7 +61,9 @@ metadata:
 
 The value of interest is the string in the data stanza's token entry. That value is a base64
 encoded string that contains the bootstrap token generated during the consul-helm ACL init
-process. For this lab you can retrieve the value, decode it, and set it to the CONSUL_HTTP_TOKEN
+process.
+
+For this lab you can retrieve the value, decode it, and set it to the CONSUL_HTTP_TOKEN
 environment variable by running the following command.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute T1}}

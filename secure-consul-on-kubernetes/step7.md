@@ -15,7 +15,7 @@ have to add tcp dump again.
 
 `apk add tcpdump`{{execute T2}}
 
-First, start `tcpdump` and observe the gossip traffic.
+Next, start `tcpdump` and observe the gossip traffic.
 
 `tcpdump -an portrange 8300-8700 -A`{{execute T2}}
 
@@ -29,17 +29,9 @@ you can test for cleartext RPC traffic.
 
 Now, from a client agent, try to set a Key-Value store entry with the consul cli.
 
--------------------------------------
-`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put apple=banana`{{execute T1}}
-
-FAILS CAUSE NO TOKEN
-
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put -token $(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d) apple=banana`{{execute T1}}
 
-Works cause we passed the secret
--------------------------------------
-
-Now, switch back to server, stop tcpdump and grep log for entry
+Finally, switch back to server, stop tcpdump and grep log for entry
 
 `grep 'apple' /tmp/tcpdump.log`{{execute interrupt T2}}
 
