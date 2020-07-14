@@ -42,7 +42,7 @@ of running pods using the following command:
 Once all pods have a status of Running, as illustrated in the following output,
 the installation is complete.
 
-```shell
+```plaintext
 NAME                                                              READY   STATUS    RESTARTS   AGE
 katacoda-consul-7d4h2                                             1/1     Running   0          82s
 katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Running   0          94s

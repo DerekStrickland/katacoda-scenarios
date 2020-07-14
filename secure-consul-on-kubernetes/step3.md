@@ -18,7 +18,7 @@ Now, from **Terminal 1** you can search the log file for the CLI operation with 
 You are able to see the Key-Value store entry in cleartext. This proves that RPC traffic
 is not encrypted.
 
-```shell
+```plaintext
 ....Seqr.ServiceMethod.KVS.Apply..Datacenter.dc1.DirEnt..CreateIndex..Flags..Key.password=1234.LockIndex..ModifyIndex..Session..Value..Op.set.Token.
 ```
 
