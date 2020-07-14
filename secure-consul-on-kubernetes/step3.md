@@ -22,6 +22,6 @@ is not encrypted.
 ....Seqr.ServiceMethod.KVS.Apply..Datacenter.dc1.DirEnt..CreateIndex..Flags..Key.password=1234.LockIndex..ModifyIndex..Session..Value..Op.set.Token.
 ```
 
-Exit the server container running in **Terminal 2**.
+Exit the server container running in **Terminal 1**.
 
 `exit`{{execute T1}}

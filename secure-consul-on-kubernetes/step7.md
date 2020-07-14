@@ -2,11 +2,12 @@
 
 Now that you have proven that ACLs are enabled, and that TLS verification is being enforced,
 you will prove that gossip/RPC traffic is encrypted. First, start a server shell session.
+This will execute in **Terminal 2**.
 
 `kubectl exec -it katacoda-consul-server-0 -- /bin/sh`{{execute T2}}
 
 Next, since the containers were recycled during the helm upgrade, you will
-have to add tcp dump again. This will execute in **Terminal 2**.
+have to add tcp dump again.
 
 `apk update`{{execute T2}}
 
