@@ -47,7 +47,7 @@ but for this lab you will use it for convenience.
 
 To view the Kubernetes secret, execute the following command:
 
-`kubectl get secret katacoda-consul-bootstrap-acl-token -o yaml | more`{{execute T1}}
+`kubectl get secret katacoda-consul-bootstrap-acl-token -o yaml`{{execute T1}}
 
 You should recieve output similar to the following, though this example has been abbreviated.
 
