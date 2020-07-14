@@ -64,11 +64,12 @@ Upgrade the installation with these changes. The upgrade may take a minute or tw
 
 `helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait &`{{execute T1}}
 
-### Monitor the upgrade
+### Verify the upgrade
 
-Now monitor that everything upgrades successfully by watching the status
+Now verify that everything upgrades successfully by reviewing the status
 of running pods using the following command:
 
-`watch kubectl get pods`{{execute T1}}
+`kubectl get pods`{{execute T1}}
 
-Once all pods are in a running status, you can proceed to the next step.
+Once all pods have a status of Running, as illustrated in the following output,
+you can proceed to the next step.

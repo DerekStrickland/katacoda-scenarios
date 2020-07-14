@@ -13,9 +13,9 @@ options, review the official [documentation](https://www.consul.io/docs/k8s/helm
 
 Apply the chart using the following command. The install may take a minute or two to complete.
 
-`helm install -f ./dc1.yaml katacoda hashicorp/consul --wait &`{{execute T1}}
+`helm install -f ./dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 
-<!-- When the installation is complete, you should receive output similar to the following:
+When the installation is complete, you should receive output similar to the following:
 
 ```plaintext
 NAME: katacoda
@@ -30,16 +30,17 @@ Thank you for installing HashiCorp Consul!
 
   $ helm status katacoda
   $ helm get all katacoda
-``` -->
+```
 
-### Monitor installation
+### Verify installation
 
-Monitor that everything installs successfully by watching the status
+Verify that everything installs successfully by reviewing the status
 of running pods using the following command:
 
-`watch kubectl get pods`{{execute T1}}
+`kubectl get pods`{{execute T1}}
 
-Check that all pods are ready/running, as illustrated in the following output.
+Once all pods have a status of Running, as illustrated in the following output,
+the installation is complete.
 
 ```shell
 NAME                                                              READY   STATUS    RESTARTS   AGE
@@ -47,10 +48,3 @@ katacoda-consul-7d4h2                                             1/1     Runnin
 katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Running   0          94s
 katacoda-consul-server-0                                          1/1     Running   0          93s
 ```
-
-Consul service mesh has been installed in the cluster, but no security
-features have been enabled. This means that:
-
-- All gossip traffic between agents is in clear text
-- All RPC communications between agents is in clear text
-- There are no Access Controls in place
