@@ -21,7 +21,7 @@ One of the secrets is named `katacoda-consul-bootstrap-acl-token`. This
 secret contains the Consul ACL bootstrap token.
 
 Run the following command to set the `CONSUL_HTTP_TOKEN`
-environment variable.
+environment variable from this secret.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute interrupt T1}}
 

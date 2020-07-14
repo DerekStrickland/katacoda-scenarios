@@ -15,7 +15,7 @@ limited tools. Run the following commands to install `tcpdump`:
 
 Start `tcpdump` to view traffic to the server container.
 
-`tcpdump -an portrange 8300-8700 -A`{{execute T1}}
+`tcpdump -an portrange 8300-8700 -A &`{{execute T1}}
 
 Inspect the output and observe that the traffic is in cleartext.
 Note the UDP operations. These entries are the gossip protocol at work.

@@ -1,6 +1,6 @@
 ### Download Helm repo
 
-First, download the Helm repo and run the following command:
+First, run the following command to download the Helm repo:
 
 `helm repo add hashicorp https://helm.releases.hashicorp.com`{{execute T1}}
 
@@ -39,7 +39,7 @@ of running pods using the following command:
 
 `kubectl get pods`{{execute T1}}
 
-Check that all pods ready/running, as illustrated in the following output.
+Check that all pods are ready/running, as illustrated in the following output.
 
 ```shell
 NAME                                                              READY   STATUS    RESTARTS   AGE

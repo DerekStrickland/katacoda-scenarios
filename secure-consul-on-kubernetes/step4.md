@@ -71,4 +71,4 @@ of running pods using the following command:
 
 `kubectl get pods`{{execute T1}}
 
-Once all pods are in a ready status, you can proceed to the next step.
+Once all pods are in a running status, you can proceed to the next step.

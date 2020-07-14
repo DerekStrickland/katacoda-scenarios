@@ -2,10 +2,10 @@
 
 Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
 
-`tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T1}}
+`tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log &`{{execute interrupt T1}}
 
 Next, generate some Consul traffic using the CLI. This simulates a user setting a value that
-may contain sensitive or secret information. This command will execute in a different terminal.
+may contain sensitive or secret information. This command will execute **Terminal 2**.
 
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put password=1234`{{execute T2}}
 
@@ -13,7 +13,7 @@ may contain sensitive or secret information. This command will execute in a diff
 
 Now, from the original terminal you can search the log file for the CLI operation with the following command:
 
-`grep 'password' /tmp/tcpdump.log`{{execute interrupt T1}}
+`grep 'ServiceMethod.KVS' /tmp/tcpdump.log`{{execute interrupt T1}}
 
 You are able to see the Key-Value store entry in cleartext. This proves that RPC traffic
 is not encrypted.
@@ -22,6 +22,6 @@ is not encrypted.
 ....Seqr.ServiceMethod.KVS.Apply..Datacenter.dc1.DirEnt..CreateIndex..Flags..Key.password=1234.LockIndex..ModifyIndex..Session..Value..Op.set.Token.
 ```
 
-Exit the server container.
+Exit the server container running in **Terminal 2**.
 
 `exit`{{execute T1}}
