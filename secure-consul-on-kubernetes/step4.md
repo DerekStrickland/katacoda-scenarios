@@ -62,13 +62,13 @@ acls:
 
 Upgrade the installation with these changes. The upgrade may take a minute or two to complete.
 
-`helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
+`helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait &`{{execute T1}}
 
-### Verify the upgrade
+### Monitor the upgrade
 
-Verify everything was successful by reviewing the status
+Now monitor that everything upgrades successfully by watching the status
 of running pods using the following command:
 
-`kubectl get pods`{{execute T1}}
+`watch kubectl get pods`{{execute T1}}
 
 Once all pods are in a running status, you can proceed to the next step.

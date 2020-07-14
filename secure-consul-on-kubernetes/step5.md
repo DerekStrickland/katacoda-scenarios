@@ -11,7 +11,7 @@ in **Terminal 3**.
 Set the CONSUL_HTTP_ADDR environment variable to use the HTTPS address/port on
 the development host in **Terminal 1**.
 
-`export CONSUL_HTTP_ADDR=https://127.0.0.1:8501`{{execute T1}}
+`export CONSUL_HTTP_ADDR=https://127.0.0.1:8501`{{execute interrupt T1}}
 
 Now, execute `consul members`. Note you must provide Consul with a way to verify TLS
 connections. In this example, you are providing the CA as a CLI option.

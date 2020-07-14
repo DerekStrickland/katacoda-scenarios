@@ -13,9 +13,9 @@ options, review the official [documentation](https://www.consul.io/docs/k8s/helm
 
 Apply the chart using the following command. The install may take a minute or two to complete.
 
-`helm install -f ./dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
+`helm install -f ./dc1.yaml katacoda hashicorp/consul --wait &`{{execute T1}}
 
-When the installation is complete, you should receive output similar to the following:
+<!-- When the installation is complete, you should receive output similar to the following:
 
 ```plaintext
 NAME: katacoda
@@ -30,14 +30,14 @@ Thank you for installing HashiCorp Consul!
 
   $ helm status katacoda
   $ helm get all katacoda
-```
+``` -->
 
-### Verify installation
+### Monitor installation
 
-Verify everything was successful by reviewing the status
+Monitor that everything installs successfully by watching the status
 of running pods using the following command:
 
-`kubectl get pods`{{execute T1}}
+`watch kubectl get pods`{{execute T1}}
 
 Check that all pods are ready/running, as illustrated in the following output.
 

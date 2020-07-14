@@ -4,7 +4,7 @@ To verify that network traffic is in cleartext you will inspect it.
 You should now have a container running named `katacoda-consul-server-0`. Connect
 to it with the following command:
 
-`kubectl exec -it katacoda-consul-server-0 -- /bin/sh`{{execute T1}}
+`kubectl exec -it katacoda-consul-server-0 -- /bin/sh`{{execute interrupt T1}}
 
 The container images used by this hands-on lab are lightweight alpine images. They ship with
 limited tools. Run the following commands to install `tcpdump`:
