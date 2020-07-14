@@ -26,7 +26,7 @@ Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
 
 `tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T2}}
 
-Next, from a client agent, try to set a Key-Value store entry with the Consul CLI.
+Next, from a client agent in a different terminal, try to set a Key-Value store entry with the Consul CLI.
 
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put -token $(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d) password=1234`{{execute T1}}
 
