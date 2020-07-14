@@ -2,7 +2,7 @@
 
 Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
 
-`tcpdump -an portrange 8300-8700 -A -w /tmp/tcpdump.log`{{execute interrupt T1}}
+`tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T1}}
 
 Next, generate some Consul traffic using the CLI. This simulates a user setting a value that
 may contain sensitive or secret information. This command will execute **Terminal 2**.
@@ -11,7 +11,7 @@ may contain sensitive or secret information. This command will execute **Termina
 
 ### View the log file
 
-Now, from the original terminal you can search the log file for the CLI operation with the following command:
+Now, from **Terminal 1** you can search the log file for the CLI operation with the following command:
 
 `grep 'ServiceMethod.KVS' /tmp/tcpdump.log`{{execute interrupt T1}}
 
