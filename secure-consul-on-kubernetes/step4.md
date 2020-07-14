@@ -62,7 +62,7 @@ acls:
 
 Upgrade the installation with these changes. The upgrade may take a minute or two to complete.
 
-`helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait &`{{execute T1}}
+`helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 
 ### Verify the upgrade
 
