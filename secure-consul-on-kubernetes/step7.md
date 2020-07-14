@@ -21,7 +21,7 @@ proves that gossip traffic is now encrypted.
 
 Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
 
-`tcpdump -an portrange 8300-8700 -A -w /tmp/tcpdump.log`{{execute interrupt T2}}
+`tcpdump -an portrange 8300-8700 -A -w /tmp/tcpdump.log &`{{execute interrupt T2}}
 
 Next, from a client agent in a different terminal, try to set a Key-Value store entry with the Consul CLI.
 This will execute in **Terminal 1**
