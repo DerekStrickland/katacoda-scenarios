@@ -47,7 +47,7 @@ but for this lab you will use it for convenience.
 
 To view the Kubernetes secret, execute the following command:
 
-`kubectl get secret katacoda-consul-bootstrap-acl-token -o yaml`{{execute T1}}
+`kubectl get secret katacoda-consul-bootstrap-acl-token -o yaml | more`{{execute T1}}
 
 You should recieve output similar to the following, though this example has been abbreviated.
 
@@ -66,7 +66,7 @@ process.
 For this lab you can retrieve the value, decode it, and set it to the CONSUL_HTTP_TOKEN
 environment variable by running the following command.
 
-`export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute T1}}
+`export CONSUL_HTTP_TOKEN=$(kubectl get secrets/katacoda-consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute interrupt T1}}
 
 Now, try to set a Key-Value store value again, with an ACL token set.
 
