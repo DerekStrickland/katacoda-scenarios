@@ -5,15 +5,14 @@ Next, you will execute a Consul CLI command to prove two things:
 
 ### Log server traffic
 
-First, start logging traffic on the server. This slightly modified version of
-the `tcpdump` command writes results to a log file. Run it now so that you can grep for
-interesting log entries later.
+This slightly modified version of the `tcpdump` command writes results to a log file.
+Run it now so that you can grep for interesting log entries later.
 
 `tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T1}}
 
-Next, generate some Consul traffic using the cli. This traffic will
+Next, generate some Consul traffic using the CLI. This traffic will
 orginate from a client machine to the server, and will prove that RPC traffic is in cleartext.
-For this experiment, the script sets a Key-Value store entry. This simulates a user setting a value that
+The script sets a Key-Value store entry. This simulates a user setting a value that
 may contain sensitive or secret information. This command will execute in a different terminal.
 
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul kv put password=B@n@n@!!`{{execute T2}}
@@ -28,7 +27,7 @@ Now, from the original terminal you can search the log file for the CLI operatio
 
 `grep 'password' /tmp/tcpdump.log`{{execute interrupt T1}}
 
-Note that you are able to see the Key-Value store entry in cleartext. This proves that RPC traffic
+You are able to see the Key-Value store entry in cleartext. This proves that RPC traffic
 is not encrypted.
 
 ```shell

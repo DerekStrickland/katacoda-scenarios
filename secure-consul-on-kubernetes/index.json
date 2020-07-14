@@ -29,7 +29,7 @@
         "text": "step4.md"
       },
       {
-        "title": "Verify that ACL tokens are required",
+        "title": "Set required TLS configuration",
         "text": "step5.md"
       },
       {

@@ -1,11 +1,10 @@
-Now, you will verify that gossip encrytion and TLS are enabled, and that
-ACLs are being enforced.
+Next, you will set necessary configuration options now that TLS is enabled.
 
 ### TLS Changes
 
-First, configure Kubernetes to forward the HTTP port (8500) to your development host.
-Note port 8501 is being forwarded. With TLS enabled, Consul uses port 8501 for HTTPS
-traffic.
+Configure Kubernetes to forward the HTTP port (8500) to your development host so that
+you can interract with the Consul CLI from the development host. Note port 8501 is being
+forwarded. With TLS enabled, Consul uses port 8501 for HTTPS traffic.
 
 `kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8501`{{execute T3}}
 

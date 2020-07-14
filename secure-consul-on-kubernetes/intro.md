@@ -14,6 +14,6 @@ This hands-on lab will guide you through enabling all three using the Consul Hel
 - Verify that gossip traffic occurs in clear text
 - Verify that RPC traffic occurs in clear text and ACLs are not enabled
 - Enable gossip encryption, TLS, and ACLs
-- Verify that ACL tokens are now required
+- Set TLS configuration
 - Retrieve and set an ACL token
 - Verify that network traffic is now encrypted

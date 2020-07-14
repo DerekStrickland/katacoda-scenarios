@@ -14,8 +14,8 @@ Specifically you:
 - Verified that gossip traffic occurs in clear text
 - Verified that RPC traffic occurs in clear text and ACLs are not enabled
 - Enabled gossip encryption, TLS, and ACLs
-- Verified that gossip traffic was now encrypted
-- Verified that API traffic was now encrypted
+- Set necessary TLS configuration
+- Retrieved and set an ACL token
 - Verified that ACL tokens were now required
 
 For more guidance on how to use Consul visit us on the [HashiCorp Learn Platform](https://learn.hashicorp.com/consul).

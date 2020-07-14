@@ -1,11 +1,3 @@
-
-HashiCorp provides a first-class Consul on Kubernetes experience by means of a helm chart.
-Installing Consul in Kubernetes consists of three steps:
-
-- Downloading the consul-helm chart repository to the development host
-- Defining your desired configuration in a yaml file
-- Apply the chart to your cluster using the helm cli
-
 ### Download Helm repo
 
 First, download the Helm repo and run the following command:
@@ -14,17 +6,12 @@ First, download the Helm repo and run the following command:
 
 ### Review a basic config file
 
-Next, in your own environment, you would define a custom configuration file,
-but for this hands on lab, the `dc1.yaml`{{open}} file has been provided.
-Feel free to review it now. For a complete reference of all possible configuration
+Review the `dc1.yaml`{{open}} file. For a complete reference of all possible configuration
 options, review the official [documentation](https://www.consul.io/docs/k8s/helm).
 
 ### Apply the chart
 
-Finally, apply the chart using the following command. Note that `katacoda` has been passed as an argument.
-Helm requires a name be provided for each installation. You may name your installation anything you like, but
-in this tutorial 'katacoda' is used. When working locally, make note of the name of your installation,
-as it will be required to apply future upgrades. The install may take a minute or two to complete.
+Apply the chart using the following command. The install may take a minute or two to complete.
 
 `helm install -f ./dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 
@@ -39,19 +26,7 @@ REVISION: 1
 NOTES:
 Thank you for installing HashiCorp Consul!
 
-Now that you have deployed Consul, you should look over the docs on using
-Consul with Kubernetes available here:
-
-https://www.consul.io/docs/platform/k8s/index.html
-
-Your release is named katacoda.
-
-To learn more about the release if you are using Helm 2, run:
-
-  $ helm status katacoda
-  $ helm get katacoda
-
-To learn more about the release if you are using Helm 3, run:
+...omitted
 
   $ helm status katacoda
   $ helm get all katacoda
