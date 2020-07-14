@@ -34,7 +34,7 @@ Thank you for installing HashiCorp Consul!
 
 ### Verify installation
 
-You can verify everything was successful by reviewing the status
+Verify everything was successful by reviewing the status
 of running pods using the following command:
 
 `kubectl get pods`{{execute T1}}
@@ -48,7 +48,7 @@ katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Runnin
 katacoda-consul-server-0                                          1/1     Running   0          93s
 ```
 
-At this point, the Consul service mesh has been installed in the cluster, but no security
+Consul service mesh has been installed in the cluster, but no security
 features have been enabled. This means that:
 
 - All gossip traffic between agents is in clear text

@@ -5,7 +5,7 @@ enough settings to allow you to list members of the Consul service mesh using th
 
 Next, try inserting a value to the Key-Value store.
 
-`consul kv put -ca-file consul-agent-ca.pem password=B@n@n@!!`{{execute T1}}
+`consul kv put -ca-file consul-agent-ca.pem password=1234`{{execute T1}}
 
 This command fails with the following message:
 
@@ -30,6 +30,6 @@ environment variable.
 
 Now, try to set a Key-Value store value again, with an ACL token set.
 
-`consul kv put -ca-file consul-agent-ca.pem password=B@n@n@!!`{{execute T1}}
+`consul kv put -ca-file consul-agent-ca.pem password=1234`{{execute T1}}
 
 The command succeeds. Now you have proven that ACLs are being enforced.
