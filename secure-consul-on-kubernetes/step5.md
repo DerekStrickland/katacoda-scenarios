@@ -6,7 +6,7 @@ you can interract with the Consul CLI from the development host. Note that
 with TLS enabled, Consul uses port 8501 instead of 8500. This will execute
 in **Terminal 3**.
 
-`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8501:8501`{{execute T3}}
+`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8501:8501 &`{{execute T3}}
 
 Set the CONSUL_HTTP_ADDR environment variable to use the HTTPS address/port on
 the development host in **Terminal 1**.
