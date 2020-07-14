@@ -1,10 +1,7 @@
-Next, upgrade your Consul service mesh installation to enable the three
-core components of Consul security: gossip encryption, TLS, and ACLs.
-
 ### Review a security enbabled config file
 
 For this hands-on lab, the `secure-dc1.yaml`{{open}} file has been provided with
-all the necessary options set.
+all the necessary options set to secure the Consul service mesh.
 
 ### Configure Gossip encryption
 

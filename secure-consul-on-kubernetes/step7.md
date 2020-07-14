@@ -1,10 +1,7 @@
-Now that you have proven that ACLs are enabled, and that TLS verification is being enforced,
-you will prove that gossip/RPC traffic is encrypted
-
-
 ### Capture server traffic
 
-First, start a server shell session.
+Now that you have proven that ACLs are enabled, and that TLS verification is being enforced,
+you will prove that gossip/RPC traffic is encrypted. First, start a server shell session.
 
 `kubectl exec -it katacoda-consul-server-0 -- /bin/sh`{{execute T2}}
 
