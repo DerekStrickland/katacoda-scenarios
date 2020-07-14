@@ -2,7 +2,7 @@ To verify that network traffic is in cleartext you will inspect it.
 
 ### View server traffic
 
-To view network traffic, connect to the consul server container, and observe
+To view network traffic, connect to the Consul server container, and observe
 its traffic using the `tcpdump` program. You should now have a container running named
 `katacoda-consul-server-0`. Connect to it with the following command:
 

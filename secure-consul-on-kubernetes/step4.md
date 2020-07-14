@@ -21,16 +21,8 @@ gossipEncryption:
     secretKey: "key"
 ```
 
-This entry provides the helm chart with the name of the Kubernetes secret to retrieve
-and use as the gossip encryption key at runtime. You must create a valid key and register it
-as a secret with Kubernetes.
-
-The `secretName` and `secretKey` entries refer to a Kubernetes secret that can be
-retrieved at runtime. Use the following command to register a gossip encryption key
-as a Kubernetes secret that the helm chart can consume. *Note* this command uses
-[consul keygen](https://www.consul.io/docs/commands/keygen.html) to generate a valid key.
-See the [documentation](https://www.consul.io/docs/agent/options#_encrypt)
-for key requirements.
+Use the following command to register a gossip encryption key
+as a Kubernetes secret that the helm chart can consume.
 
 `kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)`{{execute T1}}
 
@@ -51,8 +43,7 @@ tls:
         secretKey: tls.key
 ```
 
-Notice that it also references two Kubernetes secrets that you will need to provide: a cert and a key.
-To generate a CA run the following command:
+To generate a CA, run the following command:
 
 `consul tls ca create`{{execute T1}}
 
@@ -78,8 +69,7 @@ acls:
 
 ### Helm upgrade
 
-The config file for the chart has been properly configured, and all necessary secrets have
-been registered with Kubernetes. Execute the following command to upgrade the installation
+Execute the following command to upgrade the installation
 with these changes. The upgrade may take a minute or two to complete.
 
 `helm upgrade -f ./secure-dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}

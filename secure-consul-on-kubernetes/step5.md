@@ -1,61 +1,23 @@
 Now, you will verify that gossip encrytion and TLS are enabled, and that
 ACLs are being enforced.
 
+### TLS Changes
+
 First, configure Kubernetes to forward the HTTP port (8500) to your development host.
+Note port 8501 is being forwarded. With TLS enabled, Consul uses port 8501 for HTTPS
+traffic.
 
-`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8500`{{execute T3}}
+`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8501`{{execute T3}}
 
-Now, run consul members to retrieve a list of service mesh members.
-
-`consul members`{{execute T1}}
-
-The command fails with the following message.
-
-```plaintext
-Error retrieving members: Get "http://127.0.0.1:8500/v1/agent/members?segment=_all": EOF
-```
-
-This is the first indicator that TLS is being enforced. Once TLS is enabled, Consul uses port
-8501 for communications. Change your port forward command to forward from 8501 in cluster
-to 8500 on host:
-
-`kubectl port-forward --address 0.0.0.0 katacoda-consul-server-0 8500:8501`{{execute interrupt T3}}
-
-Now, try to list consul members again.
-
-`consul members`{{execute T1}}
-
-You should receive an error indicating that you are trying to send HTTP traffic to
-an HTTPS server.
-
-```shell
-Unexpected response code: 400 (Client sent an HTTP request to an HTTPS server.)`
-```
-
-This is another indicator that TLS is being enforced. You must set the CONSUL_HTTP_SSL
-environment variable to true on any host attempting to execute Consul cli commands.
-Do that now.
+You must also set the CONSUL_HTTP_SSL environment variable to true on any host attempting
+to execute Consul CLI commands. Do that now with the following command:
 
 `export CONSUL_HTTP_SSL=true`{{execute T1}}
 
-Now, try to list Consul members again.
-
-`consul members`{{execute T1}}
-
-You should receive a new error in output as follows:
-
-```shell
-Error retrieving members: Get "https://127.0.0.1:8500/v1/agent/members?segment=_all": x509: certificate signed by unknown authority
-```
-
-This error message indicates that connectivity is now being established, but
-communication is being rejected because the TLS handshake can't be negotiated.
-In order to authenticate with the sever, the client needs to supply a ca-file
-cli option. Run the following command, and supply the consul-agent-ca.pem file
-you created earlier in the lab.
+Now, execute `consul members`. Note you must provide Consul with a way to verify TLS
+connections. In this example, you are providing the CA as a CLI option.
 
 `consul members -ca-file consul-agent-ca.pem`{{execute T1}}
 
-You now observe a list of all members of the service mesh. The
-actions you performed in this section of the lab proved that TLS is
-being enforced.
+You now observe a list of all members of the service mesh. This
+proves that TLS is being enforced.
