@@ -1,8 +1,3 @@
-Next, you will execute a Consul CLI command to prove two things:
-
-- RPC traffic is currently unencrypted
-- ACLs are not enabled, since you are able to interact with Consul without providing a token
-
 ### Log server traffic
 
 Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
