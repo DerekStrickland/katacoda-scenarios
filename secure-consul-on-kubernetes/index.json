@@ -39,6 +39,10 @@
       {
         "title": "Verify that network traffic is encrypted",
         "text": "step7.md"
+      },
+      {
+        "title": "Deploy and test two services",
+        "text": "step8.md"
       }
     ],
     "intro": {
