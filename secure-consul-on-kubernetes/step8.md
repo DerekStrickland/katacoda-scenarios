@@ -10,7 +10,7 @@
 
 ### Deploy sample services
 
-Now that the network communications have been secureed, and ACLs have been applied,
+Now that the network communications have been secured and ACLs have been applied,
 you will configure zero-trust networking using Consul intentions. Run the following
 command to deploy a sample backend service to the cluster.
 
@@ -22,14 +22,14 @@ Now, deploy a downstream client.
 
 Next, make sure all pods are running before proceeding to the next section.
 
-`watch kubectl get pods`
+`watch kubectl get pods`{{execute T1}}
 
 ### Configure intentions
 
-With manageSystemACLs set to true, the Consul Helm chart will create a deny all intention by default.
-Run the following command to validate that the deny all intention is enforced
+With manageSystemACLs set to true, the Consul Helm chart will create a `deny all` intention by default.
+Run the following command to validate that the `deny all` intention is enforced
 
-`kubectl exec static-client static-client -- curl -s http://127.0.0.1:1234/ `{{execute T1}}
+`kubectl exec static-client static-client -- curl -s http://127.0.0.1:1234/ `{{execute interrupt T1}}
 
 Observe that the command exits with a non-zero exit code.
 
@@ -39,7 +39,7 @@ Use 'kubectl describe pod/static-client -n default' to see all of the containers
 command terminated with exit code 7
 </pre>
 
-Next, create an allow intention for the client to server traffic.
+Next, create an `allow` intention for client to server traffic.
 
 `consul intention create -ca-file consul-agent-ca.pem -allow static-client static-server`{{execute T1}}
 
