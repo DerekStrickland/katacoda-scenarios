@@ -1,6 +1,6 @@
 <style>
     pre.console {
-        background-color: rgb(56, 55, 50);
+        background-color: #383732 !important;
         font-family: "Fira Mono","DejaVu Sans Mono",Menlo,Consolas,"Liberation Mono",Monaco,"Lucida Console",monospace;
         color: white;
         padding: 5px;
