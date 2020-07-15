@@ -54,7 +54,9 @@
     "assets": {
 			"client": [
 			  { "file": "dc1.yaml", "target": "./" },
-			  { "file": "secure-dc1.yaml", "target": "./" }
+        { "file": "secure-dc1.yaml", "target": "./" },
+        { "file": "server.yaml", "target": "./" },
+			  { "file": "client.yaml", "target": "./" }
 			]
 		}
   },
