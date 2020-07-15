@@ -6,17 +6,17 @@ This may take a few minutes.
 
 **Example Output**
 
-```screenshot
+<code class="execute">
 - Installing Consul
 - Installing kubectl
 - Installing kind (Kubernetes in Docker)
 - Installing Helm 3
-```
+</code>
 
 and concluding with
 
-```plaintext
+<code class="execute">
 - Complete! Move on to the next step.
-```
+</code>
 
 Once this message appears, you are ready to continue.
