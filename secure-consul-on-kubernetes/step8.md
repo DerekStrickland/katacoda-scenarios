@@ -14,14 +14,9 @@ Next, make sure all pods are running before proceeding to the next section.
 
 `watch kubectl get pods`
 
-### Create a deny all intention
+### Configure intentions
 
-TODO:  Verify this isn't already the case - don't see it in the UI
-Next, create a deny all intention so that no services can communicate without
-explicit permission.
-
-`consul intention create -ca-file consul-agent-ca.pem -deny "*" "*"`{{execute interrupt T1}}
-
+With manageSystemACLs set to true, the Consul Helm chart will create a deny all intention by default.
 Run the following command to validate that the deny all intention is enforced
 
 `kubectl exec static-client static-client -- curl -s http://127.0.0.1:1234/ `{{execute T1}}
