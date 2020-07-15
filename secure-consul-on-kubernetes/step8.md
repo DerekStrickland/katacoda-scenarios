@@ -23,11 +23,11 @@ Run the following command to validate that the deny all intention is enforced
 
 Observe that the command exits with a non-zero exit code.
 
-<code class="execute">
+<pre class="execute">
 Defaulting container name to static-client.
 Use 'kubectl describe pod/static-client -n default' to see all of the containers in this pod.
 command terminated with exit code 7
-</code>
+</pre>
 
 Next, create an allow intention for the client to server traffic.
 
@@ -40,8 +40,8 @@ Finally, validate the intention allows traffic to from the client to the server.
 Notice the output now includes "hello world". This proves the intention is now allowing
 traffic between the client and the server.
 
-<code class="execute">
+<pre class="execute">
 Defaulting container name to static-client.
 Use 'kubectl describe pod/static-client -n default' to see all of the containers in this pod.
 "hello world"
-</code>
+</pre>
