@@ -2,6 +2,7 @@
     pre.console {
         background-color: black;
         color: white;
+        padding: 5px;
     }
 </style>
 

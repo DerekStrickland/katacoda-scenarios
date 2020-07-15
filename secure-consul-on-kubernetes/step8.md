@@ -3,6 +3,7 @@
         background-color: black;
         color: white;
         overflow: auto;
+        padding: 5px;
     }
 </style>
 
