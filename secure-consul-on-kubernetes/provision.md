@@ -1,3 +1,11 @@
+<style>
+    pre.console {
+        background-color: black;
+        color: white;
+        overflow: auto;
+    }
+</style>
+
 There are a few components that need to be added to the environment; we are
 adding them now. Wait for the complete message and then move to the
 next step.
@@ -6,7 +14,7 @@ This may take a few minutes.
 
 **Example Output**
 
-<pre class="execute">
+<pre class="console">
 - Installing Consul
 - Installing kubectl
 - Installing kind (Kubernetes in Docker)
@@ -15,7 +23,7 @@ This may take a few minutes.
 
 and concluding with
 
-<pre class="execute">
+<pre class="console">
 - Complete! Move on to the next step.
 </pre>
 

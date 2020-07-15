@@ -1,3 +1,10 @@
+<style>
+    pre.console {
+        background-color: black;
+        color: white;
+        overflow: auto;
+    }
+</style>
 ### Download Helm repo
 
 First, run the following command to download the Helm repo:
@@ -17,7 +24,7 @@ Apply the chart using the following command. The install may take a minute or tw
 
 When the installation is complete, you should receive output similar to the following:
 
-<pre class="execute">
+<pre class="console">
 NAME: katacoda
 LAST DEPLOYED: Wed Jul  8 15:56:47 2020
 NAMESPACE: default
@@ -42,7 +49,7 @@ of running pods using the following command:
 Once all pods have a status of Running, as illustrated in the following output,
 the installation is complete.
 
-<pre class="execute">
+<pre class="console">
 NAME                                                              READY   STATUS    RESTARTS   AGE
 katacoda-consul-7d4h2                                             1/1     Running   0          82s
 katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Running   0          94s
