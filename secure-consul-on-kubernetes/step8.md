@@ -6,9 +6,13 @@ command to deploy a sample backend service to the cluster.
 
 `kubectl apply -f server.yaml`{{execute T1}}
 
-Now deploy a downstream client.
+Now, deploy a downstream client.
 
 `kubectl apply -f client.yaml`{{execute T1}}
+
+Next, make sure all pods are running before proceeding to the next section.
+
+`watch kubectl get pods`
 
 ### Create a deny all intention
 
@@ -16,7 +20,7 @@ TODO:  Verify this isn't already the case - don't see it in the UI
 Next, create a deny all intention so that no services can communicate without
 explicit permission.
 
-`consul intention create -ca-file consul-agent-ca.pem -deny "*" "*"`{{execute T1}}
+`consul intention create -ca-file consul-agent-ca.pem -deny "*" "*"`{{execute interrupt T1}}
 
 Run the following command to validate that the deny all intention is enforced
 
