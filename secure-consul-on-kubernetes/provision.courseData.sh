@@ -65,6 +65,6 @@ rm -rf /tmp/provision
 
 finish
 
-EOFSRSLY
+EOF
 
 chmod +x /tmp/provision.sh
