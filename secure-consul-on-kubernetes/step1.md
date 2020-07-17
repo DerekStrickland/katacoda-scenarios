@@ -9,7 +9,7 @@
 </style>
 ### Download Helm repo
 
-First, run the following command to download the Helm repo:
+First, click the box below to run the following command and download the Helm repo:
 
 `helm repo add hashicorp https://helm.releases.hashicorp.com`{{execute T1}}
 

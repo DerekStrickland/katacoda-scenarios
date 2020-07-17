@@ -62,7 +62,8 @@
   },
   "environment": {
     "hideHiddenFiles": true,
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "showvisualise": true
   },
   "backend": {
     "imageid": "ubuntu:1804"
