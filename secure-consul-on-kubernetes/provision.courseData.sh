@@ -1,4 +1,4 @@
-cat << 'EOFSRSLY' > /tmp/provision.sh
+cat << 'EOF' > /tmp/provision.sh
 #! /bin/bash
 
 log() {
