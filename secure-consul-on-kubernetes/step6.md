@@ -30,7 +30,7 @@ secret.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute interrupt T1}}
 
-Try to list services again.
+Try to run `consul debug` again.
 
 `consul debug -ca-file ca.pem`{{execute T1}}
 
