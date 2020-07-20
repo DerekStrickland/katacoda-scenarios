@@ -16,7 +16,7 @@ gossipEncryption:
 
 Use the following command to register a gossip encryption key secret.
 
-`kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)`{{execute T1}}
+`kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)`{{execute interrupt T1}}
 
 ### Configure TLS
 
@@ -27,26 +27,13 @@ tls:
     enabled: true
     enableAutoEncrypt: true
     verify: true
-    caCert:
-        secretName: consul-ca-cert
-        secretKey: tls.crt
-    caKey:
-        secretName: consul-ca-key
-        secretKey: tls.key
 ```
 
-To generate a CA, run the following command:
+By setting these values, you have instructed Consul to generate
+and distribute all the necessary certificates, keys, and secrets.
 
-`consul tls ca create`{{execute T1}}
-
-This command generated consul-agent-ca.pem and consul-agent-ca-key.pem. Add these secrets to Kubernetes.
-
-`kubectl create secret generic consul-ca-cert --from-file='tls.crt=./consul-agent-ca.pem'`{{execute T1}}
-
-`kubectl create secret generic consul-ca-key --from-file='tls.key=./consul-agent-ca-key.pem'`{{execute T1}}
-
-You have now generated and registered all the necessary secrets to support both gossip encryption
-and TLS.
+You have now generated and registered all the necessary secrets to
+support both gossip encryption and TLS.
 
 ### Configure managed ACLs
 

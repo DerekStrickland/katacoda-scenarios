@@ -52,8 +52,8 @@ Once all pods have a status of Running, as illustrated in the following output,
 the installation is complete.
 
 <pre class="console">
-NAME                                                              READY   STATUS    RESTARTS   AGE
-katacoda-consul-7d4h2                                             1/1     Running   0          82s
-katacoda-consul-connect-injector-webhook-deployment-bd6c6dndk5b   1/1     Running   0          94s
-katacoda-consul-server-0                                          1/1     Running   0          93s
+NAME                                                 READY   STATUS    RESTARTS   AGE
+consul-7d4h2                                         1/1     Running   0          82s
+consul-connect-injector-webhook-deployment           1/1     Running   0          94s
+consul-server-0                                      1/1     Running   0          93s
 </pre>
