@@ -13,8 +13,7 @@ Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
 
 `tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T1}}
 
-Next, generate some Consul traffic using the CLI. This simulates a user setting a value that
-may contain sensitive or secret information. This command will execute **Terminal 2**.
+Next, generate some Consul traffic using the CLI. This command will execute **Terminal 2**.
 
 `kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul catalog services`{{execute T2}}
 

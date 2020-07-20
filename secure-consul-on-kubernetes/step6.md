@@ -1,12 +1,23 @@
+<style>
+    pre.console {
+        background-color: #383732 !important;
+        font-family: "Fira Mono","DejaVu Sans Mono",Menlo,Consolas,"Liberation Mono",Monaco,"Lucida Console",monospace;
+        color: white;
+        overflow: auto;
+        padding: 5px;
+    }
+</style>
 ### ACL enforcement validation
 
 Try listing Consul services.
 
-`consul catalog services -ca-file ca.pem`{{execute T1}}
+`consul debug -ca-file ca.pem`{{execute T1}}
 
 This command fails with the following message:
 
-`Error! Failed writing data: Unexpected response code: 403 (Permission denied)`
+<pre class="console">
+==> Capture validation failed: error querying target agent: Unexpected response code: 403 (Permission denied). verifyconnectivity and agent address
+</pre>
 
 You have not yet supplied an ACL token so the command fails.
 This proves ACLs are being enforced.
@@ -21,6 +32,6 @@ secret.
 
 Try to list services again.
 
-`consul catalog services -ca-file ca.pem`{{execute T1}}
+`consul debug -ca-file ca.pem`{{execute T1}}
 
 The command succeeds. You have proven that ACLs are being enforced.
