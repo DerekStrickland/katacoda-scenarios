@@ -1,4 +1,4 @@
-### Review a security enbabled config file
+### Review a security enabled config file
 
 For this hands-on lab, the `secure-dc1.yaml`{{open}} file has been provided with
 all the necessary options set to secure the Consul service mesh.
