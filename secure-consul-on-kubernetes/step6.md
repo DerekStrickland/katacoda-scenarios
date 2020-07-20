@@ -25,8 +25,13 @@ environment variable from this secret.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute interrupt T1}}
 
+Now export the CA file from the Kubernetes secrets store
+so that you can pass it to the CLI.
+
+`kubectl get secret consul-ca-cert -o jsonpath="{.data['tls\.crt']}" | base64 --decode > ca.pem`{{execute T1}}
+
 Try list services again.
 
-`consul catalog services`{{execute T1}}
+`consul catalog services -ca-file ca.pem`{{execute T1}}
 
 The command succeeds. You have proven that ACLs are being enforced.

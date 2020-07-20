@@ -30,11 +30,6 @@ When the installation is complete, you should receive output similar to the foll
 <pre class="console">
 NAME: katacoda
 LAST DEPLOYED: Wed Jul  8 15:56:47 2020
-NAMESPACE: default
-STATUS: deployed
-REVISION: 1
-NOTES:
-Thank you for installing HashiCorp Consul!
 
 ...omitted
 

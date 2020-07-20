@@ -22,11 +22,11 @@ may contain sensitive or secret information. This command will execute **Termina
 
 Now, from **Terminal 1** you can search the log file for the CLI operation with the following command:
 
-`grep 'ServiceMethod' /tmp/tcpdump.log`{{execute interrupt T1}}
+`grep 'ListServices' /tmp/tcpdump.log`{{execute interrupt T1}}
 
 You are able to see the RPC call in cleartext. This proves that RPC traffic
 is not encrypted.
 
 <pre class="console">
-....Seqr.ServiceMethod.KVS.Apply..Datacenter.dc1.DirEnt..CreateIndex..Flags..Key.password=1234.LockIndex..ModifyIndex..Session..Value..Op.set.Token.
+....A...Seq..ServiceMethod.Catalog.ListServices..AllowStale..Datacenter.dc1.Filter..MaxAge..MaxQueryTime..MaxStaleDuration..MinQueryIndex..MustRevalidate..NodeMetaFilters..RequireConsistent..Source..Datacenter..Ip..Node..Segment..StaleIfError..Token..UseCache.
 </pre>
