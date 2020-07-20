@@ -14,9 +14,13 @@ gossipEncryption:
     secretKey: "key"
 ```
 
+Exit the server container running in **Terminal 1**.
+
+`exit`{{execute T1}}
+
 Use the following command to register a gossip encryption key secret.
 
-`kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)`{{execute interrupt T1}}
+`kubectl create secret generic consul-gossip-encryption-key --from-literal=key=$(consul keygen)`{{execute T1}}
 
 ### Configure TLS
 

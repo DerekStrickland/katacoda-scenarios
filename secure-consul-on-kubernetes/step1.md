@@ -20,7 +20,8 @@ options, review the official [documentation](https://www.consul.io/docs/k8s/helm
 
 ### Apply the chart
 
-Apply the chart using the following command. The install may take a minute or two to complete.
+Apply the chart using the following command. It will start the consul clients and servers
+and provision a persistent disk. The install may take a minute or two to complete.
 
 `helm install -f ./dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 

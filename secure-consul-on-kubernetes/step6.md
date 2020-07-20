@@ -1,8 +1,8 @@
 ### ACL enforcement validation
 
-Try inserting a value to the Key-Value store.
+Try listing Consul services.
 
-`consul kv put -ca-file consul-agent-ca.pem password=1234`{{execute T1}}
+`consul catalog services`{{execute T1}}
 
 This command fails with the following message:
 
@@ -27,6 +27,6 @@ environment variable from this secret.
 
 Try to set a Key-Value store value again.
 
-`consul kv put -ca-file consul-agent-ca.pem password=1234`{{execute T1}}
+`consul catalog services`{{execute T1}}
 
 The command succeeds. You have proven that ACLs are being enforced.
