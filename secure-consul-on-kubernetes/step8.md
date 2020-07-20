@@ -24,7 +24,7 @@ Now, deploy a downstream client.
 
 `kubectl apply -f client.yaml`{{execute T1}}
 
-Next, make sure all pods are running before proceeding to the next section.
+Next, make sure all pods have a status of `Running` before proceeding to the next section.
 
 `watch kubectl get pods`{{execute T1}}
 
