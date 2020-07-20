@@ -11,8 +11,12 @@
 ### Deploy sample services
 
 Now that the network communications have been secured and ACLs have been applied,
-you will configure zero-trust networking using Consul intentions. Run the following
-command to deploy a sample backend service to the cluster.
+you will configure zero-trust networking using Consul intentions. Exit the terminal
+running on the container.
+
+`exit`{{execute interrupt T2}}
+
+Run the following command to deploy a sample backend service to the cluster.
 
 `kubectl apply -f server.yaml`{{execute T1}}
 

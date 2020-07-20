@@ -32,5 +32,3 @@ Finally, switch back to server in **Terminal 2**, stop tcpdump, and grep log for
 `grep 'ServiceMethod' /tmp/tcpdump.log`{{execute interrupt T2}}
 
 Notice that no rows were found this time. This proves that RPC traffic is now encrypted.
-
-`exit`{{execute interrupt T2}}
