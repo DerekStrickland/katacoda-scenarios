@@ -25,7 +25,7 @@ environment variable from this secret.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute interrupt T1}}
 
-Try to set a Key-Value store value again.
+Try list services again.
 
 `consul catalog services`{{execute T1}}
 
