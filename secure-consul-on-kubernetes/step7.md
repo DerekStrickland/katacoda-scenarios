@@ -22,10 +22,10 @@ Next, output `tcpdump` to a file so that you can test for cleartext RPC traffic.
 
 `tcpdump -an portrange 8300-8700 -A > /tmp/tcpdump.log`{{execute interrupt T2}}
 
-Next, from a client agent in a different terminal, try to list Consul intentions with the Consul CLI.
+Next, from a client agent in a different terminal, try to list Consul services with the Consul CLI.
 This will execute in **Terminal 1**
 
-`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul intention list -token $(kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute T1}}
+`kubectl exec $(kubectl get pods -l component=client -o jsonpath='{.items[0].metadata.name}') -- consul catalog services -token $(kubectl get secrets/consul-bootstrap-acl-token --template={{.data.token}} | base64 -d)`{{execute interrupt T1}}
 
 Finally, switch back to server in **Terminal 2**, stop tcpdump, and grep log for entry
 

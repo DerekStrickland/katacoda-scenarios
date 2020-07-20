@@ -19,8 +19,8 @@ This command fails with the following message:
 ==> Capture validation failed: error querying target agent: Unexpected response code: 403 (Permission denied). verifyconnectivity and agent address
 </pre>
 
-You have not yet supplied an ACL token so the command fails.
-This proves ACLs are being enforced.
+This command is not permitted for the anonymous token. You must supply
+an ACL token with the proper permissions. This proves ACLs are being enforced.
 
 ### Setting an ACL Token
 
