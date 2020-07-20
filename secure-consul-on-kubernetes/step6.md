@@ -9,7 +9,7 @@
 </style>
 ### ACL enforcement validation
 
-Try listing Consul services.
+Now, try running `consul debug`.
 
 `consul debug -ca-file ca.pem`{{execute T1}}
 
