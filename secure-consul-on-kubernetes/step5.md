@@ -13,10 +13,15 @@ the development host in **Terminal 1**.
 
 `export CONSUL_HTTP_ADDR=https://127.0.0.1:8501`{{execute interrupt T1}}
 
-Now, execute `consul members`. Note you must provide Consul with a way to verify TLS
-connections. In this example, you are providing the CA as a CLI option.
+Now export the CA file from the Kubernetes secrets store
+so that you can pass it to the CLI.
 
-`consul members -ca-file consul-agent-ca.pem`{{execute T1}}
+`kubectl get secret consul-ca-cert -o jsonpath="{.data['tls\.crt']}" | base64 --decode > ca.pem`{{execute T1}}
+
+Now, execute `consul members` and provide Consul with the ca-file option to verify TLS
+connections.
+
+`consul members -ca-file ca.pem`{{execute T1}}
 
 You now observe a list of all members of the service mesh. This
 proves that TLS is being enforced.
