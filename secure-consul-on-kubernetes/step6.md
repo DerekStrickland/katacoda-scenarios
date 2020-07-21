@@ -3,7 +3,7 @@ the `CONSUL_HTTP_TOKEN`.
 
 ### ACL enforcement validation
 
-Now, try running `consul debug`.
+Try running `consul debug`.
 
 `consul debug -ca-file ca.pem`{{execute T1}}
 

@@ -14,8 +14,7 @@ the development host in **Terminal 1**.
 
 `export CONSUL_HTTP_ADDR=https://127.0.0.1:8501`{{execute interrupt T1}}
 
-Now, export the CA file from the Kubernetes secrets store
-so that you can pass it to the CLI.
+Export the CA file from Kubernetes so that you can pass it to the CLI.
 
 `kubectl get secret consul-ca-cert -o jsonpath="{.data['tls\.crt']}" | base64 --decode > ca.pem`{{execute T1}}
 
