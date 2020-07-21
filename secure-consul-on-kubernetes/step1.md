@@ -6,14 +6,11 @@ Click the box below to download the Helm repo:
 
 `helm repo add hashicorp https://helm.releases.hashicorp.com`{{execute T1}}
 
-### Review a basic config file
+### Review and apply a basic config file
 
-Review the `dc1.yaml`{{open}} file.
-
-### Apply the chart
-
-Apply the chart using the following command. It will start the consul clients and servers
-and provision a persistent disk. The install may take a minute or two to complete.
+Review the `dc1.yaml`{{open}} file. The chart will start the consul clients
+and servers and provision a persistent disk. The install may take a minute
+or two to complete.
 
 `helm install -f ./dc1.yaml katacoda hashicorp/consul --wait`{{execute T1}}
 
@@ -21,11 +18,7 @@ You should receive output similar to the following:
 
 ```plaintext
 NAME: katacoda
-LAST DEPLOYED: Wed Jul  8 15:56:47 2020
-
 ...omitted
-
-  $ helm status katacoda
   $ helm get all katacoda
 ```
 
