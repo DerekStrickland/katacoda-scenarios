@@ -1,4 +1,4 @@
-Next, you will verify gossip traffic in unencrypted.
+Next, verify gossip traffic is unencrypted.
 
 ### View server traffic
 

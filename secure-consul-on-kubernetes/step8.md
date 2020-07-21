@@ -1,4 +1,4 @@
-Finally, you will deploy two sample services and secure them using Consul intentions.
+Finally, deploy two sample services and secure them using Consul intentions.
 
 ### Deploy sample services
 

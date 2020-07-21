@@ -1,4 +1,4 @@
-Now, you will prove that gossip/RPC traffic is encrypted.
+Now, prove that gossip/RPC traffic is encrypted.
 
 ### Capture server traffic
 
@@ -7,7 +7,7 @@ This will execute in **Terminal 2**.
 
 `kubectl exec -it consul-server-0 -- /bin/sh`{{execute T2}}
 
-Since the containers were recycled during the upgrade, you will
+Since the containers were recycled during the upgrade, you
 need to add tcp dump again.
 
 `apk update && apk add tcpdump`{{execute T2}}

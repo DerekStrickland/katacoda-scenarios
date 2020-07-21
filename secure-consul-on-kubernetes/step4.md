@@ -1,4 +1,4 @@
-Next, you will configure gossip encryption, TLS, and ACLS,
+Next, configure gossip encryption, TLS, ACLS,
 and then upgrade the installation.
 
 ### Review a security enabled config file

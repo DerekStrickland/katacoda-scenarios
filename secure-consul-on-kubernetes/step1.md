@@ -1,4 +1,4 @@
-First, you will install an unsecured Consul service mesh in a Kubernetes cluster.
+First, install an unsecured Consul service mesh in a Kubernetes cluster.
 
 ### Download Helm repo
 

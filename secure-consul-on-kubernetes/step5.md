@@ -1,4 +1,4 @@
-Next, you will set configuration options that are required now TLS is enabled.
+Next, set configuration options that are required now that TLS is enabled.
 
 ### TLS Configuration
 

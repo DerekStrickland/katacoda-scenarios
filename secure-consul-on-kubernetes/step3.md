@@ -1,4 +1,4 @@
-Now, you will verify RPC traffic in unencrypted.
+Now, verify RPC traffic is unencrypted.
 
 ### Log server traffic
 

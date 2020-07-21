@@ -1,4 +1,4 @@
-Now you will validate ACLs are being enforced, and configure
+Next, validate ACLs are being enforced, and configure
 the `CONSUL_HTTP_TOKEN`.
 
 ### ACL enforcement validation
