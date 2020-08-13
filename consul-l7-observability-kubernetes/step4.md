@@ -43,10 +43,17 @@ prometheus-server-64c7484778-hwtmg                           4/4     Running   0
 public-api-5f698b886-rfnh7                                   3/3     Running   0          120m
 ```
 
-Next, forward port `80` from the `frontend` pod hosting the UI to the development
+Next, in a different terminal, forward port `80` from the `frontend` pod hosting the UI to the development
 host's port `8080`.
 
-`kubectl port-forward deploy/frontend 8080:80`{{execute}}
+`kubectl port-forward deploy/frontend 8080:80`{{execute T2}}
+
+You will receive the following output.
+
+```plaintext
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+```
 
 Now, open a new tab and view port 8080. If the UI doesn't show immediately,
 wait a minute and try again. The app take some time to initialize even

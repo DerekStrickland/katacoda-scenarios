@@ -12,7 +12,7 @@ Now, change directories into the downloaded repository.
 
 ### Review and apply a basic config file
 
-Review the `helm/consul-values.yaml`{{open}} file. Note the `proxyDefaults` entry.
+Review the `consul-k8s-prometheus-grafana-hashicups-demoapp/helm/consul-values.yaml`{{open}} file. Note the `proxyDefaults` entry.
 Consul uses that setting to configure where Envoy will publish Prometheus metrics.
 
 `helm install -f helm/consul-values.yaml consul hashicorp/consul --version "0.23.1" --wait`{{execute T1}}
