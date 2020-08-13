@@ -38,7 +38,7 @@ public-api                                                   3/3     Running   0
 Next, in a different terminal, forward port `80` from the `frontend` pod hosting the UI to the development
 host's port `8080`.
 
-`kubectl port-forward deploy/frontend 8080:80`{{execute T2}}
+`kubectl port-forward deploy/frontend 8080:80 --address 0.0.0.0`{{execute T2}}
 
 You will receive the following output.
 
