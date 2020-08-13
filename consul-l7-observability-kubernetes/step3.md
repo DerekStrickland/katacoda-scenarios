@@ -7,11 +7,9 @@ You should receive output similar to the following:
 
 ```plaintext
 NAME: grafana
-...
+...TRUNCATED
 ########################
 ```
-
-### Verify the installation
 
 Verify the installation using the following command:
 

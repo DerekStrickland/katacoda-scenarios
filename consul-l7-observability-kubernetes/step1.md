@@ -1,7 +1,4 @@
 First, install Consul service mesh in a Kubernetes cluster.
-
-### Download the demo application repo
-
 Click the box below to download the Helm repo:
 
 `git clone https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp.git`{{execute T1}}
@@ -10,10 +7,7 @@ Now, change directories into the downloaded repository.
 
 `cd consul-k8s-prometheus-grafana-hashicups-demoapp`{{execute T1}}
 
-### Review and apply a basic config file
-
-Review the `consul-k8s-prometheus-grafana-hashicups-demoapp/helm/consul-values.yaml`{{open}} file. Note the `proxyDefaults` entry.
-Consul uses that setting to configure where Envoy will publish Prometheus metrics.
+Review the `consul-k8s-prometheus-grafana-hashicups-demoapp/helm/consul-values.yaml`{{open}} file. Note the `proxyDefaults` entry. Consul uses that setting to configure where Envoy will publish Prometheus metrics.
 
 `helm install -f helm/consul-values.yaml consul hashicorp/consul --version "0.23.1" --wait`{{execute T1}}
 
@@ -21,12 +15,10 @@ You should receive output similar to the following:
 
 ```plaintext
 NAME: consul
-...
+...TRUNCATED
   $ helm status consul
   $ helm get all consul
 ```
-
-### Verify installation
 
 Verify the installation using the following command:
 

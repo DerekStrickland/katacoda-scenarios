@@ -9,4 +9,3 @@ You will receive the following output.
 configmap/k6-configmap created
 deployment.apps/traffic created
 ```
-
