@@ -47,6 +47,7 @@
   "environment": {
     "hideHiddenFiles": true,
     "uilayout": "editor-terminal",
+    "uieditorpath": "/root/consul-k8s-prometheus-grafana-hashicups-demoapp",
     "showdashboard": true,
     "dashboards": [
         {

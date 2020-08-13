@@ -20,7 +20,7 @@ This will take you to a page that gives you some choices
 about how to upload Grafana dashboards. Click the "Import"
 button on the right hand side of the screen.
 
-Open the file called `consul-k8s-prometheus-grafana-hashicups-demoapp/grafana/hashicups-dashboard.json`{{open}}
+Open the file called `grafana/hashicups-dashboard.json`{{open}}
 and copy the contents into the JSON window of the Grafana UI.
 Click through the rest of the options, and you will end up with
 a dashboard that shows your current cluster metrics.
