@@ -46,7 +46,18 @@
   },
   "environment": {
     "hideHiddenFiles": true,
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "showdashboard": true,
+    "dashboards": [
+        {
+          "name": "HashiCups UI",
+          "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"
+        },
+        {
+          "name": "Grafana UI",
+          "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
+        }
+      ]
   },
   "backend": {
     "imageid": "ubuntu:1804"
