@@ -19,11 +19,10 @@ Once all pods have a status of `Running` the installation is complete.
 
 ```plaintext
 NAME                                                READY   STATUS    RESTARTS   AGE
-consul-9p9jf                                        1/1     Running   0          43m
-consul-connect-injector-webhook-deployment          1/1     Running   0          43m
-consul-server-0                                     1/1     Running   0          43m
+...
 prometheus-kube-state-metrics                       3/3     Running   0          42m
 prometheus-node-exporter                            3/3     Running   0          42m
 prometheus-pushgateway                              3/3     Running   0          42m
 prometheus-server                                   4/4     Running   0          42m
+....
 ```

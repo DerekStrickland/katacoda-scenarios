@@ -21,17 +21,12 @@ Once all pods have a status of `Running` the installation is complete.
 
 ```plaintext
 NAME                                                         READY   STATUS    RESTARTS   AGE
-consul-9p9jf                                                 1/1     Running   0          122m
-consul-connect-injector-webhook-deployment                   1/1     Running   0          122m
-consul-server-0                                              1/1     Running   0          122m
+...
 frontend                                                     3/3     Running   0          120m
-grafana                                                      3/3     Running   0          120m
+...
 postgres                                                     3/3     Running   0          120m
 products-api                                                 3/3     Running   0          120m
-prometheus-kube-state-metrics                                3/3     Running   0          122m
-prometheus-node-exporter                                     3/3     Running   0          122m
-prometheus-pushgateway                                       3/3     Running   0          122m
-prometheus-server                                            4/4     Running   0          122m
+...
 public-api                                                   3/3     Running   0          120m
 ```
 
