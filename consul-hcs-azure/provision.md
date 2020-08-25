@@ -7,8 +7,8 @@ This may take a few minutes.
 **Example Output**
 
 ```plaintext
+- Installing Azure CLI
 - Installing kubectl
-- Installing kind (Kubernetes in Docker)
 - Installing Helm 3
 - Downloading Helm Repositories
 ```
