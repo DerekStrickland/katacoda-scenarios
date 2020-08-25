@@ -14,11 +14,11 @@
         "verify": "provision.verify.sh"
       },
       {
-        "title": "Install Consul service mesh in a Kubernetes cluster",
+        "title": "Login to Azure and Install HCS CLI Extension",
         "text": "step1.md"
       },
       {
-        "title": "Install Prometheus",
+        "title": "Create HCS Datacenter",
         "text": "step2.md"
       },
       {
