@@ -27,4 +27,3 @@ Next, click below to create a resource group for this lab.
 Finally, create and HCS datacenter on Azure.
 
 `az hcs create -g learn-hcs-lab-$SESSION_ID --name learnlab --datacenter-name learn-dc --email example@hashicorp.com --external-endpoint enabled`{{execute T1}}
-
