@@ -18,7 +18,7 @@ to confirm installation.
 Next, set a unique discriminator value so that your resource group and hcs
 datacenter will have unique names.
 
-`set SESSION_ID=$($uuidgen)`{{execute T1}}
+`export SESSION_ID=$(uuidgen)`{{execute T1}}
 
 Next, click below to create a resource group for this lab.
 
