@@ -52,22 +52,7 @@
   "environment": {
     "hideHiddenFiles": true,
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/consul-k8s-prometheus-grafana-hashicups-demoapp",
-    "showdashboard": true,
-    "dashboards": [
-        {
-          "name": "HashiCups UI",
-          "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"
-        },
-        {
-          "name": "Grafana UI",
-          "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
-        },
-        {
-          "name": "Consul UI",
-          "href": "https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com"
-        }
-      ]
+    "uieditorpath": "/root"
   },
   "backend": {
     "imageid": "ubuntu:1804"
