@@ -1,15 +1,39 @@
-First, click below to login to the Azure CLI.
+First, you need to login to the Azure CLI using the login
+command provided by your TA. The command will be similar
+to this example.
 
-`az login`{{execute T1}}
+`az login --service-principal --username <appId> --password <password> --tenant <tenant>`
+
+az login \
+  --service-principal \
+  --username $(jq -r .appId sp.json) \
+  --password $(jq -r .password sp.json) \
+  --tenant $(jq -r .tenant sp.json)
 
 You will receive output like the following.
 
 ```plaintext
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code C8GXT8ST3 to authenticate.
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": REDACTED,
+    "id": REDACTED,
+    "isDefault": true,
+    "managedByTenants": [
+      {
+        "tenantId": REDACTED
+      }
+    ],
+    "name": REDACTED,
+    "state": "Enabled",
+    "tenantId": REDACTED,
+    "user": {
+      "name": REDACTED,
+      "type": "servicePrincipal"
+    }
 ```
 
-Copy the code, and click on the link to open a new browser tab and login to Azure.
-
+## TODO - Not sure we need this for this lab
 Next, click below to install the HCS extension for the Azure CLI. Enter `y` when prompted
 to confirm installation.
 

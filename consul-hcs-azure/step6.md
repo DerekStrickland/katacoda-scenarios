@@ -1,26 +1,34 @@
+You will need to configure an ingress gateway to use demo application.
 
-In a third terminal, forward the Grafana UI to port 3000 with the following command.
+An ingress gateways in Consul belongs to a class of resources called
+config entries. Open `assets/ingress-gateway.hcl`{{open}} to review
+a baseline ingress gateway config entry. Specifically, note
+that the ingress gateway is configured to expose port `8080` to external
+traffic.
 
-`export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}") && kubectl --namespace default port-forward $POD_NAME 3000 --address 0.0.0.0`{{execute T3}}
+Now, register the config entry with Consul.
 
-You will receive the following output.
+`consul config write assets/ingress-gateway.hcl`{{execute T1}}
 
-```plaintext
-Forwarding from 127.0.0.1:3000 -> 3000
-Forwarding from [::1]:3000 -> 3000
+To register the ingress gateway with Kubernetes, you must
+update the `config.yaml`{{open}}, add a top level `ingressGateways` stanza
+as shown below.
+
+```yaml
+ingressGateways:
+  enabled: true
+  gateways:
+    - name: ingress-gateway
+      service:
+        type: LoadBalancer
 ```
 
-Now, open a new tab and view port 3000. Login with
-username `admin` and password `password`. Once you
-have logged into the Grafana UI, hover over the dashboards
-icon (four squares in the left hand menu) and then click
-the "Manage" option.
+Now, use `helm upgrade` to apply the updated `config.yaml` file.
 
-This will take you to a page that gives you some choices
-about how to upload Grafana dashboards. Click the "Import"
-button on the right hand side of the screen.
+`helm upgrade -f ./config.yaml hcs hashicorp/consul --version 0.24.1 --wait`{{execute T1}}
 
-Open the file called `grafana/hashicups-dashboard.json`{{open}}
-and copy the contents into the JSON window of the Grafana UI.
-Click through the rest of the options, and you will end up with
-a dashboard that shows your current cluster metrics.
+Example output:
+
+```plaintext
+add output
+```
