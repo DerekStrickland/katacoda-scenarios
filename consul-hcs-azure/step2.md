@@ -1,18 +1,66 @@
-Next, set a unique discriminator value so that your resource group and hcs
-datacenter will have unique names.
+Now, review all the resources in your environment.
 
-`export SESSION_ID=$(uuidgen)`{{execute T1}}
+`az resource list --resource-group dwcc-zack-s-rg | jq -r '.[] | .name'`{{execute T1}}
 
-Next, click below to create a resource group for this lab.
+Example output:
 
-`az group create -l centralus -n learn-hcs-lab-$SESSION_ID`{{execute T1}}
+```plaintext
+dwcc-username--aks
+dwcc-username-peering
+dwcc-username-managed-hcs
+```
 
-Next, accept the terms and conditions.
+Next, set an environment variable to the name of your resource group.
 
-`az vm image terms accept --offer hcs-production --publisher hashicorp-4665790 --plan On-demand`{{execute T1}}
+`export RESOURCE_GROUP=$(az group list | jq -r '.[] | .name') && echo $RESOURCE_GROUP`{{execute T1}}
 
-publisher='hashicorp-4665790' offer = 'hcs-production', sku = 'on-demand', Correlation Id: 'bb8debfd-0631-4940-a71a-85a886fbc81a'
+Example output:
 
-Finally, create and HCS datacenter on Azure.
+```plaintext
+dwcc-username-rg
+```
 
-`az hcs create -g learn-hcs-lab-$SESSION_ID --name learnlab --datacenter-name learn-dc --email example@hashicorp.com --external-endpoint enabled`{{execute T1}}
+Next, set an environment variable to the name of your AKS cluster.
+
+`export AKS_CLUSTER=$(az aks list | jq -r '.[] | .name') && echo $AKS_CLUSTER`{{execute T1}}
+
+Example output:
+
+```plaintext
+dwcc-username-aks
+```
+
+Next, export the Azure AKS KUBECONFIG settings to the development host.
+
+`az aks get-credentials --name $AKS_CLUSTER --resource-group $RESOURCE_GROUP`{{execute T1}}
+
+Example output:
+
+```plaintext
+Merged "dwcc-username-aks" as current context in /root/.kube/config
+```
+
+Verify the configuration by issuing the following command.
+
+`kubectl get pods -n kube-system`{{execute T1}}
+
+```plaintext
+azure-cni-networkmonitor-8h9h8       1/1     Running   0          16h
+azure-ip-masq-agent-xjkhf            1/1     Running   0          16h
+coredns-869cb84759-4hwpj             1/1     Running   0          16h
+coredns-869cb84759-l8f7t             1/1     Running   0          16h
+coredns-autoscaler-5b867494f-5hphv   1/1     Running   0          16h
+kube-proxy-8csmn                     1/1     Running   0          16h
+metrics-server-6cd7558856-fzvz2      1/1     Running   0          16h
+tunnelfront-76454d856b-hpcwb         2/2     Running   0          16h
+```
+
+Next, set an environment variable to the name of your HCS managed app.
+
+`export HCS_MANAGED_APP=$(az hcs list | jq -r '.[] | .name') && echo $HCS_MANAGED_APP`{{execute T1}}
+
+Example output:
+
+```plaintext
+dwcc-username-managed-hcs
+```

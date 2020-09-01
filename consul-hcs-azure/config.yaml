@@ -1,0 +1,38 @@
+global:
+  enabled: false
+  name: consul
+  datacenter: westus2
+  acls:
+    manageSystemACLs: true
+    bootstrapToken:
+      secretName: dwcc-zack-s-hcs-managed-hcs-bootstrap-token
+      secretKey: token
+  gossipEncryption:
+    secretName: dwcc-zack-s-hcs-managed-hcs-hcs
+    secretKey: gossipEncryptionKey
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+    caCert:
+      secretName: dwcc-zack-s-hcs-managed-hcs-hcs
+      secretKey: caCert
+externalServers:
+  enabled: true
+  hosts: ['11eaebe7-28cc-d041-894b-0242ac110006.private.consul.11eaebe6-ef56-82ce-945a-0242ac11000c.az.hashicorp.cloud']
+  httpsPort: 443
+  useSystemRoots: true
+  k8sAuthMethodHost: https://frontend-e2fc0189.hcp.westus2.azmk8s.io:443
+client:
+  enabled: true
+  # If you are using Kubenet in your AKS cluster (the default network),
+  # uncomment the line below.
+  exposeGossipPorts: true
+  join: ['11eaebe7-28cc-d041-894b-0242ac110006.private.consul.11eaebe6-ef56-82ce-945a-0242ac11000c.az.hashicorp.cloud']
+connectInject:
+  enabled: true
+ingressGateways:
+  enabled: true
+  gateways:
+    - name: ingress-gateway
+      service:
+        type: LoadBalancer

@@ -18,15 +18,15 @@
         "text": "step1.md"
       },
       {
-        "title": "Create HCS Datacenter",
+        "title": "Inspect Azure Resources",
         "text": "step2.md"
       },
       {
-        "title": "Install Grafana",
+        "title": "Retrieve Consul client configuration and certificates",
         "text": "step3.md"
       },
       {
-        "title": "Install the demo application",
+        "title": "Bootstrap the ACL system",
         "text": "step4.md"
       },
       {
@@ -47,12 +47,32 @@
     },
     "finish": {
       "text": "finish.md"
-    }
+    },
+    "assets": {
+			"client": [
+			  { "file": "dc1-values.yml", "target": "./" },
+			  { "file": "dc2-values.yml", "target": "./" },
+			  { "file": "cluster-blueprint/README.md", "target": "./cluster-blueprint" },
+			  { "file": "cluster-blueprint/ingress.hcl", "target": "./cluster-blueprint" },
+			  { "file": "cluster-blueprint/k8s.hcl", "target": "./cluster-blueprint" },
+			  { "file": "cluster-blueprint/k8s-dashboard.yml", "target": "./cluster-blueprint" },
+			  { "file": "cluster-blueprint/network.hcl", "target": "./cluster-blueprint" },
+			  { "file": "api.yml", "target": "./" },
+          	  { "file": "web.yml", "target": "./" }
+			]
+		}
   },
   "environment": {
     "hideHiddenFiles": true,
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root"
+    "uieditorpath": "/root",
+    "showdashboard": true,
+    "dashboards": [
+        {
+          "name": "HashiCups UI",
+          "href": "http://[[INGRESS_IP]]:[[INGRESS_PORT]]"
+        }
+      ]
   },
   "backend": {
     "imageid": "ubuntu:1804"
