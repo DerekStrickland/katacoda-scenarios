@@ -4,12 +4,6 @@ to this example.
 
 `az login --service-principal --username <appId> --password <password> --tenant <tenant>`
 
-az login \
-  --service-principal \
-  --username $(jq -r .appId sp.json) \
-  --password $(jq -r .password sp.json) \
-  --tenant $(jq -r .tenant sp.json)
-
 You will receive output like the following.
 
 ```plaintext
