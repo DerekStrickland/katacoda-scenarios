@@ -19,7 +19,7 @@ log "Install prerequisites"
 
 apt-get install -y unzip curl > /dev/null
 
-sudo apt-get install jq
+# sudo apt-get install jq
 
 ## ================================
 # Retrieves lates version from checkpoint
