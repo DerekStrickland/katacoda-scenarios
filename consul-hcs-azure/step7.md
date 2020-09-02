@@ -59,4 +59,8 @@ Example output:
 8080
 ```
 
+Now, generate a clickable link in the console.
+
+`echo http://$INGRESS_IP:$INGRESS_PORT`{{execute T1}}
+
 Now, click on the HashiCups UI tab next to the console to visit the UI.
