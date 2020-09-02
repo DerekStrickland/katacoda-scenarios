@@ -14,31 +14,31 @@
         "verify": "provision.verify.sh"
       },
       {
-        "title": "Login to Azure and Install HCS CLI Extension",
+        "title": "Login to Azure",
         "text": "step1.md"
       },
       {
-        "title": "Inspect Azure Resources",
+        "title": "Configure Environment",
         "text": "step2.md"
       },
       {
-        "title": "Retrieve Consul client configuration and certificates",
+        "title": "Configure HCS",
         "text": "step3.md"
       },
       {
-        "title": "Bootstrap the ACL system",
+        "title": "Connect to Consul",
         "text": "step4.md"
       },
       {
-        "title": "Generate traffic",
+        "title": "Deploy to AKS",
         "text": "step5.md"
       },
       {
-        "title": "View the traffic in Grafana",
+        "title": "Install Ingress Gateway",
         "text": "step6.md"
       },
       {
-        "title": "View the service mesh in Consul",
+        "title": "Create Intentions",
         "text": "step7.md"
       }
     ],
@@ -50,15 +50,11 @@
     },
     "assets": {
 			"client": [
-			  { "file": "dc1-values.yml", "target": "./" },
-			  { "file": "dc2-values.yml", "target": "./" },
-			  { "file": "cluster-blueprint/README.md", "target": "./cluster-blueprint" },
-			  { "file": "cluster-blueprint/ingress.hcl", "target": "./cluster-blueprint" },
-			  { "file": "cluster-blueprint/k8s.hcl", "target": "./cluster-blueprint" },
-			  { "file": "cluster-blueprint/k8s-dashboard.yml", "target": "./cluster-blueprint" },
-			  { "file": "cluster-blueprint/network.hcl", "target": "./cluster-blueprint" },
-			  { "file": "api.yml", "target": "./" },
-          	  { "file": "web.yml", "target": "./" }
+        { "file": "frontend.yaml", "target": "./" },
+        { "file": "ingress-gateway.hcl", "target": "./" },
+        { "file": "products-api.yaml", "target": "./" },
+        { "file": "postgres.yaml", "target": "./" },
+        { "file": "public-api.yaml", "target": "./" }
 			]
 		}
   },

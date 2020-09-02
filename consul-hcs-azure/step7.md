@@ -17,7 +17,7 @@ Created: public-api => products-api (allow)
 Created: products-api => postgres (allow)
 ```
 
-Now retrieve a list of services.
+Now, retrieve a list of services.
 
 `kubectl get svc`{{execute T1}}
 
@@ -37,9 +37,10 @@ public-api                    ClusterIP      10.0.13.8     <none>           8080
 Notice the consul-ingress-gateway has an external ip
 and that port `8080` is enabled.
 
-Set the `INGRESS_IP` environment variable.
+Set the `INGRESS_IP` environment variable. This is so that the
+Katacoda environment can load the UI.
 
-`export INGRESS_IP=$(kub get svc/consul-ingress-gateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}') && echo $INGRESS_IP`{{execute T1}}
+`export INGRESS_IP=$(kubectl get svc/consul-ingress-gateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}') && echo $INGRESS_IP`{{execute T1}}
 
 Example output:
 
@@ -47,14 +48,15 @@ Example output:
 40.125.122.123
 ```
 
-Set the `INGRESS_PORT` environment variable.
+Set the `INGRESS_PORT` environment variable. This is so that the
+Katacoda environment can load the UI.
 
-`export INGRESS_PORT=$(kub get svc/consul-ingress-gateway -o jsonpath='{.spec.ports[0].port}') && echo $INGRESS_PORT`{{execute T1}}
+`export INGRESS_PORT=$(kubectl get svc/consul-ingress-gateway -o jsonpath='{.spec.ports[0].port}') && echo $INGRESS_PORT`{{execute T1}}
 
 Example output:
 
 ```plaintext
-40.125.122.123
+8080
 ```
 
 Now, click on the HashiCups UI tab next to the console to visit the UI.

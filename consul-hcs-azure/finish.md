@@ -6,7 +6,6 @@ service mesh across a mix of VM, hybrid/on-premises, and Kubernetes environments
 while offloading the operational burden to the Site Reliability Engineering (SRE)
 experts at HashiCorp.
 
-
 In this hands-on lab, you:
 
 - Deployed an instance of HashiCorp Consul Service on Azure.
