@@ -1,6 +1,6 @@
 Now, deploy Consul to the the AKS cluster using the `config.yaml` file you generated.
 
-`helm install hcs hashicorp/consul -f config.yaml --version 0.24.1 --wait`{{execute T1}}
+`helm install hcs hashicorp/consul -f config.yaml --wait`{{execute T1}}
 
 Abbreviated example output:
 
@@ -26,10 +26,9 @@ consul-5nmmx                                 1/1     Running   0          2m3s
 consul-connect-injector-webhook-deployment   1/1     Running   0          2m3s
 ```
 
-Once the deployment is complete, type CTRL-C to stop the watch.
 Now, deploy a demo production workload to the AKS cluster.
 
-`kubectl apply -f assets --wait`{{execute T1}}
+`kubectl apply -f hashicups --wait`{{execute interrupt T1}}
 
 Example output:
 
@@ -38,7 +37,7 @@ service/frontend created
 serviceaccount/frontend created
 configmap/nginx-configmap created
 deployment.apps/frontend created
-...OMITTED
+...TRUNCATED
 ```
 
 Next, check that the workload is deployed and running.

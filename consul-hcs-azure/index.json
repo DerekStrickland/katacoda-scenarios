@@ -50,11 +50,11 @@
     },
     "assets": {
 			"client": [
-        { "file": "frontend.yaml", "target": "./" },
+        { "file": "frontend.yaml", "target": "./hashicups" },
         { "file": "ingress-gateway.hcl", "target": "./" },
-        { "file": "products-api.yaml", "target": "./" },
-        { "file": "postgres.yaml", "target": "./" },
-        { "file": "public-api.yaml", "target": "./" }
+        { "file": "products-api.yaml", "target": "./hashicups" },
+        { "file": "postgres.yaml", "target": "./hashicups" },
+        { "file": "public-api.yaml", "target": "./hashicups" }
 			]
 		}
   },
@@ -66,7 +66,7 @@
     "dashboards": [
         {
           "name": "HashiCups UI",
-          "href": "http://[[INGRESS_IP]]:[[INGRESS_PORT]]"
+          "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/hashicups.html"
         }
       ]
   },

@@ -15,7 +15,7 @@ Set the `CONSUL_HTTP_TOKEN` environment variable to the bootstrap
 token to allow full command line access. **Warning:** the production
 best practices is to use specific tokens for specific jobs/operators.
 
-`export CONSUL_HTTP_TOKEN=$(kubectl get secret $HCS_MANAGED_APP-bootstrap-token -o jsonpath={.data.token} | base64 -D) && echo $CONSUL_HTTP_TOKEN`
+`export CONSUL_HTTP_TOKEN=$(kubectl get secret $HCS_MANAGED_APP-bootstrap-token -o jsonpath={.data.token} | base64 -d) && echo $CONSUL_HTTP_TOKEN`{{execute T1}}
 
 Example output:
 
