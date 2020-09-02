@@ -8,9 +8,7 @@ experts at HashiCorp.
 
 In this hands-on lab, you:
 
-- Deployed an instance of HashiCorp Consul Service on Azure.
-- Learned the available configuration options for the servers.
-- Interacted with your Consul service using the Consul UI.
-- Retrieved HCS on Azure data including server connection information, Consul agent configuration, and Consul certificates.
-- Deployed a Consul service mesh on an AKS cluster and connected it to an instance of a HCS on Azure.
-- Deployed a demo application to AKS and verified it was registered with Consul service mesh.
+- Configured a development environment to manage HashiCorp Consul Service on Azure.
+- Connected your HCS datacenter to an AKS cluster.
+- Deployed a demo application to AKS.
+- Deployed an Ingress Gateway to HCS to enable external traffic to your application.
