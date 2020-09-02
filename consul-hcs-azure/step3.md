@@ -19,7 +19,7 @@ Next, generate a Kubernetes secret with credentials for the HCS cluster.
 Example output:
 
 ```plaintext
-secret/dwcc-username-managed-hcs-hcs created
+secret/dwcc-username-managed-hcs created
 ```
 
 Next, generate the helm configuration file that you will apply to your AKS cluster.
