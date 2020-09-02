@@ -36,4 +36,4 @@ You will receive output like the following.
 Click below to install the HCS extension for the Azure CLI. Enter `y` when prompted
 to confirm installation. This extension is required to managed HCS from the command line.
 
-`az extension add --source https://releases.hashicorp.com/hcs/0.2.1/hcs-0.2.1-py2.py3-none-any.whl`{{execute T1}}
+`yes | az extension add --source https://releases.hashicorp.com/hcs/0.2.1/hcs-0.2.1-py2.py3-none-any.whl`{{execute T1}}

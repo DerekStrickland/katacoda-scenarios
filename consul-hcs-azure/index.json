@@ -62,13 +62,7 @@
     "hideHiddenFiles": true,
     "uilayout": "editor-terminal",
     "uieditorpath": "/root",
-    "showdashboard": true,
-    "dashboards": [
-        {
-          "name": "HashiCups UI",
-          "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/hashicups.html"
-        }
-      ]
+    "showdashboard": true
   },
   "backend": {
     "imageid": "ubuntu:1804"

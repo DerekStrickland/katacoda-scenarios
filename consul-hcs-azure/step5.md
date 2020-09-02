@@ -28,7 +28,7 @@ consul-connect-injector-webhook-deployment   1/1     Running   0          2m3s
 
 Now, deploy a demo production workload to the AKS cluster.
 
-`kubectl apply -f hashicups --wait`{{execute interrupt T1}}
+`kubectl apply -f hashicups/ --wait`{{execute interrupt T1}}
 
 Example output:
 
