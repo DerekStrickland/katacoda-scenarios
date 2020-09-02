@@ -18,10 +18,6 @@ cd /tmp/provision
 log "Install prerequisites"
 
 apt-get install -y unzip curl > /dev/null
-## ================================
-log "Install prerequisites"
-
-apt-get install -y unzip curl > /dev/null
 
 sudo apt-get install jq
 
