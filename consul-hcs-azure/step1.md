@@ -18,13 +18,7 @@ You will receive output like the following.
         "tenantId": REDACTED
       }
     ],
-    "name": REDACTED,
-    "state": "Enabled",
-    "tenantId": REDACTED,
-    "user": {
-      "name": REDACTED,
-      "type": "servicePrincipal"
-    }
+TRUNCATED
 ```
 
 Click below to install the HCS extension for the Azure CLI. Enter `y` when prompted

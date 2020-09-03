@@ -12,8 +12,7 @@ https://11eaebe7-28cc-d041-894b-0242ac110006.consul.11eaebe6-ef56-82ce-945a-0242
 ```
 
 Set the `CONSUL_HTTP_TOKEN` environment variable to the bootstrap
-token to allow full command line access. **Warning:** the production
-best practices is to use specific tokens for specific jobs/operators.
+token to allow full command line access.
 
 `export CONSUL_HTTP_TOKEN=$(kubectl get secret $HCS_MANAGED_APP-bootstrap-token -o jsonpath={.data.token} | base64 -d) && echo $CONSUL_HTTP_TOKEN`{{execute T1}}
 

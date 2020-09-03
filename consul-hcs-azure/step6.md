@@ -8,7 +8,7 @@ traffic.
 
 Now, register the config entry with Consul.
 
-`consul config write assets/ingress-gateway.hcl`{{execute interrupt T1}}
+`consul config write ingress-gateway.hcl`{{execute interrupt T1}}
 
 To register the ingress gateway with Kubernetes, you must
 update the `config.yaml`{{open}}, add a top level `ingressGateways` stanza

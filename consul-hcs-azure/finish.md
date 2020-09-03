@@ -9,6 +9,6 @@ experts at HashiCorp.
 In this hands-on lab, you:
 
 - Configured a development environment to manage HashiCorp Consul Service on Azure.
-- Connected your HCS datacenter to an AKS cluster.
+- Secured communications between your HCS datacenter and your AKS cluster.
 - Deployed a demo application to AKS.
 - Deployed an Ingress Gateway to HCS to enable external traffic to your application.
