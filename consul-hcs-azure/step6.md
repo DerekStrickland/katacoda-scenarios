@@ -17,6 +17,8 @@ as shown below.
 ```yaml
 ingressGateways:
   enabled: true
+  defaults:
+    replicas: 1
   gateways:
     - name: ingress-gateway
       service:
