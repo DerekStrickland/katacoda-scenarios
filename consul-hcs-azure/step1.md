@@ -6,7 +6,7 @@ to this example.
 az login \
   --service-principal
   --username <appId> \
-  --password <password> \
+  --password hashiconf \
   --tenant <tenant>
 ```
 
