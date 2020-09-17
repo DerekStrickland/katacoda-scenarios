@@ -1,4 +1,4 @@
-Now, for the establish virtual network peering between the HCS Datacenter's
+Now, setup virtual network peering between the HCS Datacenter's
 vnet and the AKS Cluster's vnet.
 
 First, create a peering from the HCS Datacenter's vnet to the AKS Cluster's vnet.
