@@ -22,7 +22,7 @@ Example output:
 
 ```plaintext
 dwcc-username--aks
-dwcc-username-peering
+dwcc-username-vnet
 dwcc-username-managed-hcs
 ```
 
