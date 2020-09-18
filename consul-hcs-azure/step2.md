@@ -1,6 +1,6 @@
 First, set an environment variable for the `username` your
-TA provided you. You can copy this command to your clipboard
-and then paste it into the console and change the username.
+TA provided you. Copy this command to your clipboard,
+then paste it into the console, and then change the username.
 
 `export USERNAME=username`{{copy}}
 
