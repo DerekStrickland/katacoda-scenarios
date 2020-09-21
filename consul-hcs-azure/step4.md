@@ -42,5 +42,4 @@ Example output:
 ```plaintext
 Node                                               Address        Status  Type    Build      Protocol  DC       Segment
 11eaebe7-28cc-d041-894b-0242ac110006-vmss-1000000  10.0.0.4:8301  left    server  1.8.0+ent  2         westus2  <all>
-11eaebe7-28cc-d041-894b-0242ac110006-vmss-2000000  10.0.0.5:8301  alive   server  1.8.0+ent  2         westus2  <all>
 ```
