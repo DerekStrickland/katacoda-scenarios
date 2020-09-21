@@ -14,12 +14,12 @@ To register the ingress gateway with Kubernetes, you must
 update the config.yaml file by adding a top level `ingressGateways`
 stanza.
 
-`echo "ingressGateways:  enabled: true
-  defaults:
-    replicas: 1
-  gateways:
-    - name: ingress-gateway
-      service:
+`echo "ingressGateways:  enabled: true \
+  defaults: \
+    replicas: 1 \
+  gateways: \
+    - name: ingress-gateway \
+      service: \
         type: LoadBalancer" >> config.yaml`{{execute T1}}
 
 Review the `config.yaml`{{open}} file, and notice the `ingressGateways`
