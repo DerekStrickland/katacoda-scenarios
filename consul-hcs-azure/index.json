@@ -1,13 +1,13 @@
 {
-  "title": "Connect an AKS cluster to HashiCorp Consul Service on Azure",
-  "description": "In this hands-on lab you will deploy a Consul service mesh on an existing Azure Kubernetes Service (AKS) cluster and connect it to an instance of a HCS on Azure.",
+  "title": "Deploy Production Workloads With Managed Consul and Kubernetes",
+  "description": "In this hands-on lab you will deploy a Consul service mesh on an existing Azure Kubernetes Service (AKS) cluster and connect it to an instance of a HashiCorp Consul Service (HCS) on Azure.",
   "difficulty": "Intermediate",
   "icon": "fa-consul",
-  "time": "15 minutes",
+  "time": "20 minutes",
   "details": {
     "steps": [
       {
-        "title": "Provisioning Lab Infrastructure",
+        "title": "Lab Infrastructure Provisioning",
         "text": "provision.md",
         "courseData": "provision.courseData.sh",
         "code": "provision.code.sh",
@@ -18,23 +18,23 @@
         "text": "step1.md"
       },
       {
-        "title": "Configure Environment",
+        "title": "Configure Your Environment",
         "text": "step2.md"
       },
       {
-        "title": "Configure HCS",
+        "title": "Configure HCS on Azure",
         "text": "step3.md"
       },
       {
-        "title": "Connect to Consul",
+        "title": "Configure and connect to Consul",
         "text": "step4.md"
       },
       {
-        "title": "Deploy to AKS",
+        "title": "Deploy an App to AKS",
         "text": "step5.md"
       },
       {
-        "title": "Install Ingress Gateway",
+        "title": "Install an Ingress Gateway",
         "text": "step6.md"
       },
       {

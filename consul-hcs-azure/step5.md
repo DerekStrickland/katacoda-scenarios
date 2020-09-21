@@ -41,6 +41,10 @@ consul-5nmmx                                 1/1     Running   0          2m3s
 consul-connect-injector-webhook-deployment   1/1     Running   0          2m3s
 ```
 
+### Access Consul UI
+
+### Deploy HashiCups Application 
+
 Now, deploy a demo production workload to the AKS cluster.
 
 `kubectl apply -f hashicups/ --wait`{{execute interrupt T1}}
