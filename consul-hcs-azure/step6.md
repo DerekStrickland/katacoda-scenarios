@@ -11,19 +11,19 @@ Now, register the config entry with Consul.
 `consul config write ingress-gateway.hcl`{{execute interrupt T1}}
 
 To register the ingress gateway with Kubernetes, you must
-update the `config.yaml`{{open}}, add a top level `ingressGateways` stanza
-as shown below.
+update the config.yaml file by adding a top level `ingressGateways`
+stanza.
 
-```yaml
-ingressGateways:
-  enabled: true
+`echo "ingressGateways:  enabled: true
   defaults:
     replicas: 1
   gateways:
     - name: ingress-gateway
       service:
-        type: LoadBalancer
-```
+        type: LoadBalancer" >> config.yaml`{{execute T1}}
+
+Review the `config.yaml`{{open}} file, and notice the `ingressGateways`
+stanza.
 
 Now, use `helm upgrade` to apply the updated `config.yaml` file.
 
