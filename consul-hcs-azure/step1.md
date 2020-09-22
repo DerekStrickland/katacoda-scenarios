@@ -1,5 +1,5 @@
 First, you need to login to the Azure CLI using the login
-command provided by your TA. The command will be similar
+command provided by your instructor. The command will be similar
 to this example.
 
 ```plaintext
@@ -27,8 +27,8 @@ You will receive output like the following.
 TRUNCATED
 ```
 
-Click below to install the HCS extension for the Azure CLI.
-This extension is required to managed HCS from the command line.
+Click below to install the HCS on Azure extension for the Azure CLI.
+This extension is required to manage HCS on Azure from the command line.
 
 `az extension add --source https://releases.hashicorp.com/hcs/0.3.0/hcs-0.3.0-py2.py3-none-any.whl`{{execute T1}}
 

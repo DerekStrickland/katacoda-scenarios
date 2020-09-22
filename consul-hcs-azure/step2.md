@@ -1,10 +1,14 @@
+### Setup the HCS on Azure CLI extension
+
 First, set an environment variable for the `username` your
-TA provided you. Copy this command to your clipboard,
-then paste it into the console, and then change the username.
+instructor provided you and set an environment variable to the name of your resource group.
+
+Copy the following command to your clipboard,
+then paste it into the console, and then **change the username**.
 
 `export USERNAME=username`{{copy}}
 
-Next, set an environment variable to the name of your resource group.
+Set the environment variable.
 
 `export RESOURCE_GROUP=dwcc-$USERNAME-rg && echo $RESOURCE_GROUP`{{execute T1}}
 
@@ -25,6 +29,8 @@ dwcc-username--aks
 dwcc-username-vnet
 dwcc-username-managed-hcs
 ```
+
+### Configure access to AKS
 
 Next, set an environment variable to the name of your AKS cluster.
 
@@ -60,6 +66,8 @@ kube-proxy-8csmn                     1/1     Running   0          16h
 metrics-server-6cd7558856-fzvz2      1/1     Running   0          16h
 tunnelfront-76454d856b-hpcwb         2/2     Running   0          16h
 ```
+
+### Configure accss to HCS on Azure
 
 Next, set an environment variable to the name of your HCS managed app.
 
