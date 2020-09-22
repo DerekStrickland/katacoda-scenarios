@@ -65,6 +65,6 @@
     "showdashboard": true
   },
   "backend": {
-    "imageid": "ubuntu:1804"
+    "imageid": "hashicorp-hashistack"
   }
 }
