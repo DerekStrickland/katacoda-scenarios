@@ -22,6 +22,24 @@ apt-get install -y unzip curl > /dev/null
 # sudo apt-get install jq
 
 ## ================================
+# Retrieves lates version from checkpoint
+# Substitute this with APP_VERSION=x.y.z to configure a specific version.
+APP_VERSION=1.8.2
+
+log "Installing Consul ${APP_VERSION}"
+
+curl -s https://releases.hashicorp.com/consul/${APP_VERSION}/consul_${APP_VERSION}_linux_amd64.zip -o consul_${APP_VERSION}_linux_amd64.zip
+unzip consul_${APP_VERSION}_linux_amd64.zip > /dev/null
+chmod +x consul
+mv consul /usr/local/bin/consul
+rm -rf consul_${APP_VERSION}_linux_amd64.zip > /dev/null
+
+## ================================
+log "Installing Azure CLI"
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+## ================================
 log "Installing kubectl"
 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
