@@ -1,3 +1,5 @@
+### Create the Kubernetes Secrets 
+
 Next, configure the necessary secrets to enable communication
 between the HCS cluster and the AKS cluster.
 
@@ -21,6 +23,8 @@ Example output:
 ```plaintext
 secret/dwcc-username-managed-hcs created
 ```
+
+### Create Helm configuration
 
 Next, generate the helm configuration file that you will apply to your AKS cluster.
 
