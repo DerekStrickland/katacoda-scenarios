@@ -51,8 +51,6 @@ consul-5nmmx                                 1/1     Running   0          2m3s
 consul-connect-injector-webhook-deployment   1/1     Running   0          2m3s
 ```
 
-### Access Consul UI
-
 ### Deploy HashiCups Application
 
 Now, deploy a demo production workload to the AKS cluster.
@@ -88,4 +86,3 @@ products-api                                 3/3     Running   0          2m5s
 public-api                                   3/3     Running   0          2m4s
 ```
 
-Once the deployment is complete, type CTRL-C to stop the watch.

@@ -32,8 +32,3 @@ Click below to uncomment line 29 so that gossip ports are exposed.
 
 `sed -i -e 's/^  # \(exposeGossipPorts\)/  \1/' config.yaml`{{execute T1}}
 
-<!-- ```yaml
-  # If you are using Kubenet in your AKS cluster (the default network),
-  # uncomment the line below.
-  exposeGossipPorts: true
-``` -->
