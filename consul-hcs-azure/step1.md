@@ -1,3 +1,5 @@
+### Log into the Azure CLI
+
 First, you need to login to the Azure CLI using the login
 command provided by your instructor. The command will be similar
 to this example.
@@ -26,6 +28,8 @@ You will receive output like the following.
     ],
 TRUNCATED
 ```
+
+### Install the HCS on Azure extension
 
 Click below to install the HCS on Azure extension for the Azure CLI.
 This extension is required to manage HCS on Azure from the command line.

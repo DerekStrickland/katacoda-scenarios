@@ -1,3 +1,5 @@
+### Configure the Consul CLI 
+
 Now you will configure your development host so that you
 can issue commands with the Consul CLI.
 
@@ -25,6 +27,8 @@ Example output:
 1978b243-d3bb-bb56-c88c-50892003698f
 ```
 
+### Configure access to the Consul UI 
+
 Now, copy that token, and use it to login to the Consul UI.
 
 Next, set the `CONSUL_HTTP_SSL_VERIFY` environment variable to false.
@@ -39,6 +43,8 @@ false
 
 Now, verify that your development host is configured correctly
 to interact with your HCS Managed App.
+
+### Access Consul 
 
 `consul members`{{execute T1}}
 

@@ -1,5 +1,7 @@
 You will need to configure an ingress gateway to use demo application.
 
+### Create a config entry
+
 An ingress gateways in Consul belongs to a class of resources called
 config entries. Open `ingress-gateway.hcl`{{open}} to review
 a baseline ingress gateway config entry. Specifically, note
@@ -9,6 +11,8 @@ traffic.
 Now, register the config entry with Consul.
 
 `consul config write ingress-gateway.hcl`{{execute interrupt T1}}
+
+### Upgrade Consul to use the ingress gateway
 
 To register the ingress gateway with Kubernetes, you must
 update the `config.yaml`{{open}}, and add a top level `ingressGateways`
@@ -26,6 +30,8 @@ ingressGateways:
         type: LoadBalancer
 EOF
 ```{{execute T1}}
+
+Note, the configuration will auto-save. 
 
 Now, use `helm upgrade` to apply the updated `config.yaml` file.
 

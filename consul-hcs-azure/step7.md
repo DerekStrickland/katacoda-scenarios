@@ -3,6 +3,8 @@ and it's upstream starting with the ingress-gateway
 you configured in the last step. Issue the following
 command to add all necessary intentions.
 
+### Allow communication 
+
 `consul intention create ingress-gateway frontend && \
 consul intention create frontend public-api && \
 consul intention create public-api products-api && \
@@ -16,6 +18,8 @@ Created: frontend => public-api (allow)
 Created: public-api => products-api (allow)
 Created: products-api => postgres (allow)
 ```
+
+### Access the HashiCups UI
 
 Now, retrieve a list of services.
 
