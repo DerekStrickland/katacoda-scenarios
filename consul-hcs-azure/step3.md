@@ -26,10 +26,14 @@ Next, generate the helm configuration file that you will apply to your AKS clust
 
 `az hcs generate-helm-values --name $HCS_MANAGED_APP --resource-group $RESOURCE_GROUP --aks-cluster-name $AKS_CLUSTER > config.yaml`{{execute T1}}
 
-Now, open `config.yaml`{{open}} and uncomment line 29 so that gossip ports are exposed.
+Now, open `config.yaml`{{open}} and review it's contents.
 
-```yaml
+Click below to uncomment line 29 so that gossip ports are exposed.
+
+`sed -i -e 's/^  # \(exposeGossipPorts\)/  \1/' config.yaml`{{execute T1}}
+
+<!-- ```yaml
   # If you are using Kubenet in your AKS cluster (the default network),
   # uncomment the line below.
   exposeGossipPorts: true
-```
+``` -->
