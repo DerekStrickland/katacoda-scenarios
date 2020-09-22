@@ -14,15 +14,15 @@ To register the ingress gateway with Kubernetes, you must
 update the `config.yaml`{{open}}, and add a top level `ingressGateways`
 stanza. Click below to add stanza.
 
-`sudo tee -a ./config.yaml <<EOF
-ingressGateways:
-  enabled: true
-  defaults:
-    replicas: 1
-  gateways:
-    - name: ingress-gateway
-      service:
-        type: LoadBalancer
+`sudo tee -a ./config.yaml <<EOF \
+ingressGateways: \
+  enabled: true \
+  defaults: \
+    replicas: 1 \
+  gateways: \
+    - name: ingress-gateway \
+      service: \
+        type: LoadBalancer \
 EOF`{{execute T1}}
 
 Now, use `helm upgrade` to apply the updated `config.yaml` file.
